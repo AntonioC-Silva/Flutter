@@ -23,7 +23,6 @@ class _BancoState extends State<Banco> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(appBarTheme: AppBarTheme(style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold,))),
       home: TelaInicial()
 
     );
@@ -42,9 +41,9 @@ class _TelaInicialState extends State<TelaInicial> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          
-          title: Text("INTER", ,),
+          title: Text("INTER", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold,),),
           backgroundColor: Colors.orange,
+          
         ),
         
         body: Center(
