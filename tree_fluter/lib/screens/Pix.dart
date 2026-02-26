@@ -16,10 +16,7 @@ class _PixState extends State<Pix> {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.push(
               context,
@@ -46,17 +43,21 @@ class _PixState extends State<Pix> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               width: 315,
               child: Row(
-                spacing: 90,
                 children: [
-                  const Text(
-                    "R\$: 1800.00",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      decoration: const InputDecoration(
+
+                      ),
                     ),
                   ),
                   TextButton(
@@ -67,7 +68,7 @@ class _PixState extends State<Pix> {
                       );
                     },
                     child: const Icon(
-                      Icons.remove_red_eye,
+                      Icons.backspace_outlined,
                       color: Colors.black,
                     ),
                   ),
@@ -75,7 +76,7 @@ class _PixState extends State<Pix> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 40,
@@ -88,16 +89,14 @@ class _PixState extends State<Pix> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      side: const BorderSide(
-                        width: 25,
-                        color: Colors.white,
-                      ),
+                      side: const BorderSide(width: 25, color: Colors.white),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const TelaInicial()),
+                          builder: (context) => const TelaInicial(),
+                        ),
                       );
                     },
                     child: const Column(
@@ -110,7 +109,7 @@ class _PixState extends State<Pix> {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "Serviços",
+                          "Scanear",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
@@ -128,29 +127,23 @@ class _PixState extends State<Pix> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      side: const BorderSide(
-                        width: 25,
-                        color: Colors.white,
-                      ),
+                      side: const BorderSide(width: 25, color: Colors.white),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const TelaInicial()),
+                          builder: (context) => const TelaInicial(),
+                        ),
                       );
                     },
                     child: const Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(
-                          Icons.copy,
-                          color: Colors.orange,
-                          size: 37,
-                        ),
+                        Icon(Icons.copy, color: Colors.orange, size: 37),
                         SizedBox(height: 5),
                         Text(
-                          "Serviços",
+                          "Colar",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
@@ -168,16 +161,14 @@ class _PixState extends State<Pix> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      side: const BorderSide(
-                        width: 25,
-                        color: Colors.white,
-                      ),
+                      side: const BorderSide(width: 25, color: Colors.white),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const TelaInicial()),
+                          builder: (context) => const TelaInicial(),
+                        ),
                       );
                     },
                     child: const Column(
