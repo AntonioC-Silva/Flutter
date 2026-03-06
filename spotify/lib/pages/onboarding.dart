@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify/main.dart';
+import 'package:spotify/pages/login.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -19,6 +20,7 @@ class _OnboardingState extends State<Onboarding> {
     return Scaffold(
       backgroundColor: Color(0xff121212),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text("Onboarding", style: TextStyle(color: Color(0xff1db954), fontSize: 20, fontWeight: FontWeight.bold),),
         backgroundColor: Color(0xff121212),),
 
@@ -59,22 +61,28 @@ class _OnboardingState extends State<Onboarding> {
             ),
 
             SizedBox(height: 60),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Color(0xff1db954),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              ),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TelaInicial()));
-              },
-              child: Row(
-                mainAxisSize: MainAxisSize.min, 
-                children: [
-                  Text("Próximo", style: TextStyle(color: Colors.white, fontSize: 16)),
-                  SizedBox(width: 10),
-                  Icon(Icons.arrow_forward, color: Colors.white),
-                ],
+            Container(
+              alignment: Alignment.centerRight,
+              margin: EdgeInsets.only(right: 10),
+              child:
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Color(0xff1db954),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                },
+                child: Row(
+                
+                  mainAxisSize: MainAxisSize.min, 
+                  children: [
+                    Text("Próximo", style: TextStyle(color: Colors.white, fontSize: 16)),
+                    SizedBox(width: 10),
+                    Icon(Icons.arrow_forward, color: Colors.white),
+                  ],
+                ),
               ),
             ),
 

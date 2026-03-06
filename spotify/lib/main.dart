@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spotify/pages/onboarding.dart';
 
 void main() {
-  runApp(const Spotify());
+  runApp(Spotify());
 }
 
 class Spotify extends StatefulWidget {
@@ -21,6 +21,7 @@ class _SpotifyState extends State<Spotify> {
     );
   }
 }
+
 
 class TelaInicial extends StatefulWidget {
   const TelaInicial({super.key});
