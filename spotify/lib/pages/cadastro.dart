@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/pages/cadastro.dart';
-import 'package:spotify/pages/home.dart';
+import 'package:spotify/pages/login.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Cadastro extends StatefulWidget {
+  const Cadastro({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Cadastro> createState() => _CadastroState();
 }
 
-class _LoginState extends State<Login> {
+class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +35,7 @@ class _LoginState extends State<Login> {
         child: Column(
           children: [
             SizedBox(height: 50),
-            Text("Entrar no Spotify", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold,)),
+            Text("Cadastre-se no Spotify", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold,)),
 
             SizedBox(height: 90,),
             SizedBox(
@@ -75,8 +74,33 @@ class _LoginState extends State<Login> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  labelText: 'Senha',
+                  labelText: 'Definir Senha',
                   hintText: 'Digite sua senha',
+                  prefixIcon: Icon(Icons.lock_person_outlined, color: Colors.white,),
+                  focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff1db954)),
+                  borderRadius: BorderRadius.circular(50),
+                  )
+                ),
+              )
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+              width: 300,
+              child: 
+              TextField(
+                obscureText: true,
+                obscuringCharacter: "*",
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  labelStyle: TextStyle(color:  Colors.white),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  labelText: 'Confirme sua Senha',
+                  hintText: 'Confirmar senha',
                   prefixIcon: Icon(Icons.lock_person_outlined, color: Colors.white,),
                   focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xff1db954)),
@@ -90,9 +114,9 @@ class _LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Não tem conta? ", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.normal),),
-                GestureDetector(onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cadastro()));
-                }, child: Text("Cadastre-se", style: TextStyle(color: Color(0xff1db954)),),)
+                Text("Já tem conta? ", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.normal),),
+                GestureDetector(onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                }, child: Text("Logar", style: TextStyle(color: Color(0xff1db954)),),)
 
 
               ],
@@ -106,7 +130,7 @@ class _LoginState extends State<Login> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
               ),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Cadastro()));
                 }, child: Text("Entrar", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),), ),
 
 
