@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/pages/home.dart';
 import 'package:spotify/pages/login.dart';
 
 class Cadastro extends StatefulWidget {
@@ -130,7 +131,7 @@ class _CadastroState extends State<Cadastro> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
               ),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Cadastro()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                 }, child: Text("Entrar", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),), ),
 
 

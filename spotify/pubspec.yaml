@@ -64,6 +64,17 @@ flutter:
    - assets/carrosel2.png
    - assets/carrosel3.png
    - assets/user.jpg
+   - assets/play1.jpg
+   - assets/play2.jpg
+   - assets/play3.jpg
+   - assets/play4.jpg
+   - assets/play5.jpg
+   - assets/Recentes1.png
+   - assets/Recentes2.png
+   - assets/Recentes3.png
+   - assets/Recentes4.png
+   - assets/Recentes5.png
+   - assets/Recentes6.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
