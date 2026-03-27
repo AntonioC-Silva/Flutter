@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
 
 class FormacaoCard extends StatelessWidget {
-  final String titulo;
-  final String periodo1;
-  final String curso1;
-  final String periodo2;
-  final String curso2;
+  String titulo;
+  String periodo1;
+  String curso1;
+  String periodo2;
+  String curso2;
 
-  const FormacaoCard({
-    super.key,
-    required this.titulo,
-    required this.periodo1,
-    required this.curso1,
-    required this.periodo2,
-    required this.curso2,
-  });
+  FormacaoCard({super.key, required this.titulo, required this.periodo1, required this.curso1, required this.periodo2, required this.curso2,});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 390,
-      padding: const EdgeInsets.all(20),
+      padding:  EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(20),
@@ -28,7 +21,7 @@ class FormacaoCard extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.2),
             blurRadius: 10,
-            offset: const Offset(0, 5),
+            offset:  Offset(0, 5),
           ),
         ],
       ),
@@ -37,13 +30,13 @@ class FormacaoCard extends StatelessWidget {
         children: [
           Text(
             titulo,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          const SizedBox(height: 40), 
+           SizedBox(height: 40), 
           
           
           Stack(
@@ -59,15 +52,15 @@ class FormacaoCard extends StatelessWidget {
               
               Row(
                 children: [
-                  const SizedBox(width: 40), 
+                   SizedBox(width: 40), 
                   _buildPontoTimeline(periodo1, curso1),
-                  const SizedBox(width: 150),
+                   SizedBox(width: 150),
                   _buildPontoTimeline(periodo2, curso2),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 40),
+           SizedBox(height: 40),
         ],
       ),
     );
@@ -81,7 +74,7 @@ class FormacaoCard extends StatelessWidget {
         Container(
           width: 16,
           height: 16,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
           ),
@@ -94,12 +87,12 @@ class FormacaoCard extends StatelessWidget {
             children: [
               Text(
                 periodo,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: Colors.white),
+                style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: Colors.white),
               ),
               Text(
                 curso,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style:  TextStyle(
                   color: Color.fromARGB(255, 219, 217, 217), 
                   fontSize: 10
                 ),

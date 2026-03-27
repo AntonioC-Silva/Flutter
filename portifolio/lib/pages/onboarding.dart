@@ -3,7 +3,7 @@ import 'package:portifolio/components/text.dart';
 import 'package:portifolio/pages/sobreMim.dart';
 
 class Onboarding extends StatelessWidget {
-  const Onboarding({super.key});
+  Onboarding({super.key});
 
   @override
   Widget build(BuildContext context) {

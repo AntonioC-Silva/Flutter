@@ -18,7 +18,7 @@ class Parte extends StatelessWidget {
             decoration: BoxDecoration(image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover), borderRadius: BorderRadius.circular(20)),
 
           ),
-          Text(texto??"", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.normal),)
+          Text(texto??"", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
         ],
       ),
     );

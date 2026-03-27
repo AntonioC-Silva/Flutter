@@ -4,10 +4,13 @@ import 'package:portifolio/pages/sobreMim.dart';
 
 
 class Menu extends StatelessWidget { 
+  Color cor;
+  Menu({super.key, this.cor = Colors.black});
+
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      icon: Icon(Icons.more_vert, color: Colors.black,),
+      icon: Icon(Icons.more_vert, color: cor,),
       itemBuilder: (BuildContext context) => [
         PopupMenuItem(
           child: ListTile(
