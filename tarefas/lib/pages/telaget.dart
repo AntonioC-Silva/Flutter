@@ -14,7 +14,7 @@ class _TelaGetState extends State<TelaGet> {
   // logica
   String result = "";
   void GET() async{ //async pq espera o resultado da requisição
-    final askProvider = await http.get(Uri.parse("http://10.109.72.10:3000/task")); //constante que espera receber o valor então ela muda quando receber a resposta do servidor
+    final askProvider = await http.get(Uri.parse("http://10.109.72.35:3000/task")); //constante que espera receber o valor então ela muda quando receber a resposta do servidor
   
     if (askProvider.statusCode == 200){
       final data = jsonDecode(askProvider.body);

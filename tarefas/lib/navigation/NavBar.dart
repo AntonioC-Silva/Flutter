@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tarefas/pages/teladelete.dart';
 import 'package:tarefas/pages/telaget.dart';
+import 'package:tarefas/pages/telapost.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -14,7 +15,8 @@ class _NavBarState extends State<NavBar> {
   int indexAtual = 0; // ver a tela q ta selecioanada
   List pages =[
     TelaGet(),
-    TelaDelete()
+    TelaDelete(),
+    TelaPost()
   ];
   
   void i(int novoIndex){
@@ -30,6 +32,7 @@ class _NavBarState extends State<NavBar> {
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(icon: Icon(Icons.get_app, color: Colors.white,), backgroundColor: Colors.lightBlue, label: "GET"),
         BottomNavigationBarItem(icon: Icon(Icons.delete_outline, color: Colors.white,),  backgroundColor: Colors.lightBlue, label: "DELETE",),
+        BottomNavigationBarItem(icon: Icon(Icons.delete_outline, color: Colors.white,),  backgroundColor: Colors.lightBlue, label: "POST",),
       ],
       backgroundColor: Colors.lightBlue,
       selectedItemColor: Colors.white,
