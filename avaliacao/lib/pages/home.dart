@@ -1,30 +1,44 @@
 import 'package:avaliacao/components/carrosel.dart';
+import 'package:avaliacao/navigation/barraPesquisa.dart';
+import 'package:avaliacao/navigation/Bemvindo.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class PaginaInicial extends StatefulWidget {
+  final String nomeUsuario;
+  final String avatarUrl;
+  const PaginaInicial({super.key, required this.nomeUsuario, required this.avatarUrl});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<PaginaInicial> createState() => _PaginaInicialState();
 }
 
-class _HomeState extends State<Home> {
+class _PaginaInicialState extends State<PaginaInicial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF040C20),
       appBar: AppBar(
-        title: const Text('Home'),
-        backgroundColor: const Color(0xFF0A1931),
+        title: const BarraPesquisa(),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: CircleAvatar( // Agora usa o avatar do usuário logado
+              radius: 18,
+              backgroundImage: NetworkImage(widget.avatarUrl),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-            Carrosel(titulo: 'Todos os Jogos'), // Todos os jogos com título personalizado
-            SizedBox(height: 20),
-            Carrosel(categorias: ['RPG'], titulo: 'Melhores RPGs'), // RPGs com título personalizado
-            SizedBox(height: 20),
-            Carrosel(categorias: ['Tiro', 'FPS'], titulo: 'Jogos de Ação Intensa'), // Tiro/FPS com título personalizado
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [ // Agora usa o nome do usuário logado
+            CabecalhoSaudacao(nome: widget.nomeUsuario),
+            const Carrosel(titulo: 'Todos os Jogos'),
+            const Carrosel(categorias: ['RPG'], titulo: 'Melhores RPGs'),
+            const Carrosel(categorias: ['Tiro', 'FPS'], titulo: 'Jogos de Ação Intensa'),
           ],
         ),
       ),

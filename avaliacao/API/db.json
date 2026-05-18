@@ -1,54 +1,568 @@
 {
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Jogador Um",
+      "email": "admin@teste.com",
+      "senha": "123",
+      "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+    },
+    {
+      "nome": "Antonio",
+      "email": "acrscloud@gmail.com",
+      "senha": "2617",
+      "avatar": "https://i.pravatar.cc/150?u=avatar1",
+      "id": "Rj5ZPpL-hgk"
+    }
+  ],
   "jogos": [
-    { "id": 1, "nome": "Elden Ring", "categorias": ["RPG", "Aventura", "Souls-like"], "valor": 229.90, "imagem": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=500" },
-    { "id": 2, "nome": "Counter-Strike 2", "categorias": ["Tiro", "FPS", "Competitivo"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=500" },
-    { "id": 3, "nome": "EA SPORTS FC 24", "categorias": ["Esporte", "Simulação"], "valor": 359.00, "imagem": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=500" },
-    { "id": 4, "nome": "Baldur's Gate 3", "categorias": ["RPG", "Estratégia", "Aventura"], "valor": 199.99, "imagem": "https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=500" },
-    { "id": 5, "nome": "Cyberpunk 2077", "categorias": ["RPG", "Tiro", "Mundo Aberto"], "valor": 199.90, "imagem": "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=500" },
-    { "id": 6, "nome": "Stardew Valley", "categorias": ["Simulação", "RPG", "Relaxante"], "valor": 24.99, "imagem": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=500" },
-    { "id": 7, "nome": "Red Dead Redemption 2", "categorias": ["Aventura", "Mundo Aberto", "Tiro"], "valor": 299.00, "imagem": "https://images.unsplash.com/photo-1533928298208-27ff66555d8d?q=80&w=500" },
-    { "id": 8, "nome": "Hollow Knight", "categorias": ["Metroidvania", "Aventura", "Indie"], "valor": 46.99, "imagem": "https://images.unsplash.com/photo-1627850604058-52e40de1b847?q=80&w=500" },
-    { "id": 9, "nome": "Forza Horizon 5", "categorias": ["Corrida", "Esporte", "Mundo Aberto"], "valor": 249.00, "imagem": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=500" },
-    { "id": 10, "nome": "Resident Evil 4 Remake", "categorias": ["Terror", "Tiro", "Aventura"], "valor": 169.00, "imagem": "https://images.unsplash.com/photo-1605142859862-978be7eba909?q=80&w=500" },
-    { "id": 11, "nome": "Terraria", "categorias": ["Sobrevivência", "Aventura", "Indie"], "valor": 19.99, "imagem": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500" },
-    { "id": 12, "nome": "God of War", "categorias": ["Ação", "Aventura", "RPG"], "valor": 199.90, "imagem": "https://images.unsplash.com/photo-1580234811497-9bd7fd2f357d?q=80&w=500" },
-    { "id": 13, "nome": "Grand Theft Auto V", "categorias": ["Mundo Aberto", "Tiro", "Aventura"], "valor": 82.42, "imagem": "https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=500" },
-    { "id": 14, "nome": "Left 4 Dead 2", "categorias": ["Tiro", "Zumbis", "Cooperativo"], "valor": 32.99, "imagem": "https://images.unsplash.com/photo-1509191432712-d251c2339a36?q=80&w=500" },
-    { "id": 15, "nome": "The Witcher 3: Wild Hunt", "categorias": ["RPG", "Aventura", "Mundo Aberto"], "valor": 129.99, "imagem": "https://images.unsplash.com/photo-1509191432712-d251c2339a36?q=80&w=500" },
-    { "id": 16, "nome": "Rainbow Six Siege", "categorias": ["Tiro", "FPS", "Estratégia"], "valor": 59.99, "imagem": "https://images.unsplash.com/photo-1624138784614-87fd1b6528f2?q=80&w=500" },
-    { "id": 17, "nome": "Cities: Skylines II", "categorias": ["Estratégia", "Simulação"], "valor": 165.00, "imagem": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=500" },
-    { "id": 18, "nome": "Street Fighter 6", "categorias": ["Luta", "Esporte", "Arcade"], "valor": 249.00, "imagem": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=500" },
-    { "id": 19, "nome": "Hades", "categorias": ["Roguelike", "Ação", "Indie"], "valor": 73.99, "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500" },
-    { "id": 20, "nome": "Rust", "categorias": ["Sobrevivência", "MMO", "Tiro"], "valor": 103.49, "imagem": "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=500" },
-    { "id": 21, "nome": "Slay the Spire", "categorias": ["Estratégia", "Cartas", "Roguelike"], "valor": 47.49, "imagem": "https://images.unsplash.com/photo-1635314156841-4f86a24130d5?q=80&w=500" },
-    { "id": 22, "nome": "Dota 2", "categorias": ["MOBA", "Estratégia", "Competitivo"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500" },
-    { "id": 23, "nome": "Outer Wilds", "categorias": ["Exploração", "Mistério", "Aventura"], "valor": 59.99, "imagem": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=500" },
-    { "id": 24, "nome": "Call of Duty: MW III", "categorias": ["Tiro", "FPS", "Ação"], "valor": 299.00, "imagem": "https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=500" },
-    { "id": 25, "nome": "Subnautica", "categorias": ["Sobrevivência", "Exploração", "Aventura"], "valor": 57.99, "imagem": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=500" },
-    { "id": 26, "nome": "Rocket League", "categorias": ["Esporte", "Corrida", "Física"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=500" },
-    { "id": 27, "nome": "Dead by Daylight", "categorias": ["Terror", "Sobrevivência", "Multijogador"], "valor": 49.99, "imagem": "https://images.unsplash.com/photo-1505633573214-362bd9d5384e?q=80&w=500" },
-    { "id": 28, "nome": "Factorio", "categorias": ["Estratégia", "Automação", "Simulação"], "valor": 100.00, "imagem": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500" },
-    { "id": 29, "nome": "Sekiro", "categorias": ["Ação", "Souls-like", "Aventura"], "valor": 199.00, "imagem": "https://images.unsplash.com/photo-1521714161819-155349685541?q=80&w=500" },
-    { "id": 30, "nome": "Phasmophobia", "categorias": ["Terror", "Investigação", "Indie"], "valor": 27.89, "imagem": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=500" },
-    { "id": 31, "nome": "Portal 2", "categorias": ["Puzzle", "Plataforma", "Sci-Fi"], "valor": 32.99, "imagem": "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=500" },
-    { "id": 32, "nome": "Monster Hunter: World", "categorias": ["Ação", "RPG", "Cooperativo"], "valor": 99.90, "imagem": "https://images.unsplash.com/photo-1559893088-c0787ebfc084?q=80&w=500" },
-    { "id": 33, "nome": "Terraria", "categorias": ["Sobrevivência", "Aventura", "Crafting"], "valor": 19.99, "imagem": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500" },
-    { "id": 34, "nome": "Apex Legends", "categorias": ["Tiro", "Battle Royale", "FPS"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1560253023-3ee5d64ddfb6?q=80&w=500" },
-    { "id": 35, "nome": "Skyrim", "categorias": ["RPG", "Mundo Aberto", "Fantasia"], "valor": 149.00, "imagem": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=500" },
-    { "id": 36, "nome": "Cuphead", "categorias": ["Ação", "Plataforma", "Indie"], "valor": 36.99, "imagem": "https://images.unsplash.com/photo-1585644112145-3f1ed2137882?q=80&w=500" },
-    { "id": 37, "nome": "Sea of Thieves", "categorias": ["Aventura", "Multijogador", "Piratas"], "valor": 89.99, "imagem": "https://images.unsplash.com/photo-1519114056088-b877fe073a5e?q=80&w=500" },
-    { "id": 38, "nome": "Project Zomboid", "categorias": ["Sobrevivência", "Zumbis", "Simulação"], "valor": 37.99, "imagem": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500" },
-    { "id": 39, "nome": "Dark Souls III", "categorias": ["Souls-like", "RPG", "Ação"], "valor": 229.00, "imagem": "https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=500" },
-    { "id": 40, "nome": "Warframe", "categorias": ["Ação", "Tiro", "MMO"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=500" },
-    { "id": 41, "nome": "Valheim", "categorias": ["Sobrevivência", "Mundo Aberto", "Crafting"], "valor": 37.99, "imagem": "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=500" },
-    { "id": 42, "nome": "RimWorld", "categorias": ["Estratégia", "Simulação", "Gestão"], "valor": 65.99, "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=500" },
-    { "id": 43, "nome": "Devil May Cry 5", "categorias": ["Ação", "Hack and Slash"], "valor": 99.90, "imagem": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=500" },
-    { "id": 44, "nome": "Destiny 2", "categorias": ["Tiro", "FPS", "MMO"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=500" },
-    { "id": 45, "nome": "Celeste", "categorias": ["Plataforma", "Difícil", "Indie"], "valor": 36.99, "imagem": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=500" },
-    { "id": 46, "nome": "Among Us", "categorias": ["Multijogador", "Dedução", "Social"], "valor": 10.89, "imagem": "https://images.unsplash.com/photo-1615483660505-5026932a392a?q=80&w=500" },
-    { "id": 47, "nome": "Euro Truck Simulator 2", "categorias": ["Simulação", "Dirigir", "Relaxante"], "valor": 51.99, "imagem": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=500" },
-    { "id": 48, "nome": "Deep Rock Galactic", "categorias": ["Tiro", "Cooperativo", "Exploração"], "valor": 57.99, "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500" },
-    { "id": 49, "nome": "The Sims 4", "categorias": ["Simulação", "Vida", "Construção"], "valor": 0.00, "imagem": "https://images.unsplash.com/photo-1513364233939-b84920c474def?q=80&w=500" },
-    { "id": 50, "nome": "Papers, Please", "categorias": ["Indie", "Simulação", "Estratégia"], "valor": 20.69, "imagem": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500" }
-  ]
+    {
+      "id": "1",
+      "nome": "Elden Ring",
+      "categorias": [
+        "RPG",
+        "Aventura",
+        "Souls-like"
+      ],
+      "valor": 229.9,
+      "imagem": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=500"
+    },
+    {
+      "id": "2",
+      "nome": "Counter-Strike 2",
+      "categorias": [
+        "Tiro",
+        "FPS",
+        "Competitivo"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=500"
+    },
+    {
+      "id": "3",
+      "nome": "EA SPORTS FC 24",
+      "categorias": [
+        "Esporte",
+        "Simulação"
+      ],
+      "valor": 359,
+      "imagem": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=500"
+    },
+    {
+      "id": "4",
+      "nome": "Baldur's Gate 3",
+      "categorias": [
+        "RPG",
+        "Estratégia",
+        "Aventura"
+      ],
+      "valor": 199.99,
+      "imagem": "https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=500"
+    },
+    {
+      "id": "5",
+      "nome": "Cyberpunk 2077",
+      "categorias": [
+        "RPG",
+        "Tiro",
+        "Mundo Aberto"
+      ],
+      "valor": 199.9,
+      "imagem": "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=500"
+    },
+    {
+      "id": "6",
+      "nome": "Stardew Valley",
+      "categorias": [
+        "Simulação",
+        "RPG",
+        "Relaxante"
+      ],
+      "valor": 24.99,
+      "imagem": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=500"
+    },
+    {
+      "id": "7",
+      "nome": "Red Dead Redemption 2",
+      "categorias": [
+        "Aventura",
+        "Mundo Aberto",
+        "Tiro"
+      ],
+      "valor": 299,
+      "imagem": "https://images.unsplash.com/photo-1533928298208-27ff66555d8d?q=80&w=500"
+    },
+    {
+      "id": "8",
+      "nome": "Hollow Knight",
+      "categorias": [
+        "Metroidvania",
+        "Aventura",
+        "Indie"
+      ],
+      "valor": 46.99,
+      "imagem": "https://images.unsplash.com/photo-1627850604058-52e40de1b847?q=80&w=500"
+    },
+    {
+      "id": "9",
+      "nome": "Forza Horizon 5",
+      "categorias": [
+        "Corrida",
+        "Esporte",
+        "Mundo Aberto"
+      ],
+      "valor": 249,
+      "imagem": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=500"
+    },
+    {
+      "id": "10",
+      "nome": "Resident Evil 4 Remake",
+      "categorias": [
+        "Terror",
+        "Tiro",
+        "Aventura"
+      ],
+      "valor": 169,
+      "imagem": "https://images.unsplash.com/photo-1605142859862-978be7eba909?q=80&w=500"
+    },
+    {
+      "id": "11",
+      "nome": "Terraria",
+      "categorias": [
+        "Sobrevivência",
+        "Aventura",
+        "Indie"
+      ],
+      "valor": 19.99,
+      "imagem": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500"
+    },
+    {
+      "id": "12",
+      "nome": "God of War",
+      "categorias": [
+        "Ação",
+        "Aventura",
+        "RPG"
+      ],
+      "valor": 199.9,
+      "imagem": "https://images.unsplash.com/photo-1580234811497-9bd7fd2f357d?q=80&w=500"
+    },
+    {
+      "id": "13",
+      "nome": "Grand Theft Auto V",
+      "categorias": [
+        "Mundo Aberto",
+        "Tiro",
+        "Aventura"
+      ],
+      "valor": 82.42,
+      "imagem": "https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=500"
+    },
+    {
+      "id": "14",
+      "nome": "Left 4 Dead 2",
+      "categorias": [
+        "Tiro",
+        "Zumbis",
+        "Cooperativo"
+      ],
+      "valor": 32.99,
+      "imagem": "https://images.unsplash.com/photo-1509191432712-d251c2339a36?q=80&w=500"
+    },
+    {
+      "id": "15",
+      "nome": "The Witcher 3: Wild Hunt",
+      "categorias": [
+        "RPG",
+        "Aventura",
+        "Mundo Aberto"
+      ],
+      "valor": 129.99,
+      "imagem": "https://images.unsplash.com/photo-1509191432712-d251c2339a36?q=80&w=500"
+    },
+    {
+      "id": "16",
+      "nome": "Rainbow Six Siege",
+      "categorias": [
+        "Tiro",
+        "FPS",
+        "Estratégia"
+      ],
+      "valor": 59.99,
+      "imagem": "https://images.unsplash.com/photo-1624138784614-87fd1b6528f2?q=80&w=500"
+    },
+    {
+      "id": "17",
+      "nome": "Cities: Skylines II",
+      "categorias": [
+        "Estratégia",
+        "Simulação"
+      ],
+      "valor": 165,
+      "imagem": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=500"
+    },
+    {
+      "id": "18",
+      "nome": "Street Fighter 6",
+      "categorias": [
+        "Luta",
+        "Esporte",
+        "Arcade"
+      ],
+      "valor": 249,
+      "imagem": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=500"
+    },
+    {
+      "id": "19",
+      "nome": "Hades",
+      "categorias": [
+        "Roguelike",
+        "Ação",
+        "Indie"
+      ],
+      "valor": 73.99,
+      "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500"
+    },
+    {
+      "id": "20",
+      "nome": "Rust",
+      "categorias": [
+        "Sobrevivência",
+        "MMO",
+        "Tiro"
+      ],
+      "valor": 103.49,
+      "imagem": "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=500"
+    },
+    {
+      "id": "21",
+      "nome": "Slay the Spire",
+      "categorias": [
+        "Estratégia",
+        "Cartas",
+        "Roguelike"
+      ],
+      "valor": 47.49,
+      "imagem": "https://images.unsplash.com/photo-1635314156841-4f86a24130d5?q=80&w=500"
+    },
+    {
+      "id": "22",
+      "nome": "Dota 2",
+      "categorias": [
+        "MOBA",
+        "Estratégia",
+        "Competitivo"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500"
+    },
+    {
+      "id": "23",
+      "nome": "Outer Wilds",
+      "categorias": [
+        "Exploração",
+        "Mistério",
+        "Aventura"
+      ],
+      "valor": 59.99,
+      "imagem": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=500"
+    },
+    {
+      "id": "24",
+      "nome": "Call of Duty: MW III",
+      "categorias": [
+        "Tiro",
+        "FPS",
+        "Ação"
+      ],
+      "valor": 299,
+      "imagem": "https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=500"
+    },
+    {
+      "id": "25",
+      "nome": "Subnautica",
+      "categorias": [
+        "Sobrevivência",
+        "Exploração",
+        "Aventura"
+      ],
+      "valor": 57.99,
+      "imagem": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=500"
+    },
+    {
+      "id": "26",
+      "nome": "Rocket League",
+      "categorias": [
+        "Esporte",
+        "Corrida",
+        "Física"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=500"
+    },
+    {
+      "id": "27",
+      "nome": "Dead by Daylight",
+      "categorias": [
+        "Terror",
+        "Sobrevivência",
+        "Multijogador"
+      ],
+      "valor": 49.99,
+      "imagem": "https://images.unsplash.com/photo-1505633573214-362bd9d5384e?q=80&w=500"
+    },
+    {
+      "id": "28",
+      "nome": "Factorio",
+      "categorias": [
+        "Estratégia",
+        "Automação",
+        "Simulação"
+      ],
+      "valor": 100,
+      "imagem": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500"
+    },
+    {
+      "id": "29",
+      "nome": "Sekiro",
+      "categorias": [
+        "Ação",
+        "Souls-like",
+        "Aventura"
+      ],
+      "valor": 199,
+      "imagem": "https://images.unsplash.com/photo-1521714161819-155349685541?q=80&w=500"
+    },
+    {
+      "id": "30",
+      "nome": "Phasmophobia",
+      "categorias": [
+        "Terror",
+        "Investigação",
+        "Indie"
+      ],
+      "valor": 27.89,
+      "imagem": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=500"
+    },
+    {
+      "id": "31",
+      "nome": "Portal 2",
+      "categorias": [
+        "Puzzle",
+        "Plataforma",
+        "Sci-Fi"
+      ],
+      "valor": 32.99,
+      "imagem": "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=500"
+    },
+    {
+      "id": "32",
+      "nome": "Monster Hunter: World",
+      "categorias": [
+        "Ação",
+        "RPG",
+        "Cooperativo"
+      ],
+      "valor": 99.9,
+      "imagem": "https://images.unsplash.com/photo-1559893088-c0787ebfc084?q=80&w=500"
+    },
+    {
+      "id": "33",
+      "nome": "Terraria",
+      "categorias": [
+        "Sobrevivência",
+        "Aventura",
+        "Crafting"
+      ],
+      "valor": 19.99,
+      "imagem": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500"
+    },
+    {
+      "id": "34",
+      "nome": "Apex Legends",
+      "categorias": [
+        "Tiro",
+        "Battle Royale",
+        "FPS"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1560253023-3ee5d64ddfb6?q=80&w=500"
+    },
+    {
+      "id": "35",
+      "nome": "Skyrim",
+      "categorias": [
+        "RPG",
+        "Mundo Aberto",
+        "Fantasia"
+      ],
+      "valor": 149,
+      "imagem": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=500"
+    },
+    {
+      "id": "36",
+      "nome": "Cuphead",
+      "categorias": [
+        "Ação",
+        "Plataforma",
+        "Indie"
+      ],
+      "valor": 36.99,
+      "imagem": "https://images.unsplash.com/photo-1585644112145-3f1ed2137882?q=80&w=500"
+    },
+    {
+      "id": "37",
+      "nome": "Sea of Thieves",
+      "categorias": [
+        "Aventura",
+        "Multijogador",
+        "Piratas"
+      ],
+      "valor": 89.99,
+      "imagem": "https://images.unsplash.com/photo-1519114056088-b877fe073a5e?q=80&w=500"
+    },
+    {
+      "id": "38",
+      "nome": "Project Zomboid",
+      "categorias": [
+        "Sobrevivência",
+        "Zumbis",
+        "Simulação"
+      ],
+      "valor": 37.99,
+      "imagem": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500"
+    },
+    {
+      "id": "39",
+      "nome": "Dark Souls III",
+      "categorias": [
+        "Souls-like",
+        "RPG",
+        "Ação"
+      ],
+      "valor": 229,
+      "imagem": "https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=500"
+    },
+    {
+      "id": "40",
+      "nome": "Warframe",
+      "categorias": [
+        "Ação",
+        "Tiro",
+        "MMO"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=500"
+    },
+    {
+      "id": "41",
+      "nome": "Valheim",
+      "categorias": [
+        "Sobrevivência",
+        "Mundo Aberto",
+        "Crafting"
+      ],
+      "valor": 37.99,
+      "imagem": "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=500"
+    },
+    {
+      "id": "42",
+      "nome": "RimWorld",
+      "categorias": [
+        "Estratégia",
+        "Simulação",
+        "Gestão"
+      ],
+      "valor": 65.99,
+      "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=500"
+    },
+    {
+      "id": "43",
+      "nome": "Devil May Cry 5",
+      "categorias": [
+        "Ação",
+        "Hack and Slash"
+      ],
+      "valor": 99.9,
+      "imagem": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=500"
+    },
+    {
+      "id": "44",
+      "nome": "Destiny 2",
+      "categorias": [
+        "Tiro",
+        "FPS",
+        "MMO"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=500"
+    },
+    {
+      "id": "45",
+      "nome": "Celeste",
+      "categorias": [
+        "Plataforma",
+        "Difícil",
+        "Indie"
+      ],
+      "valor": 36.99,
+      "imagem": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=500"
+    },
+    {
+      "id": "46",
+      "nome": "Among Us",
+      "categorias": [
+        "Multijogador",
+        "Dedução",
+        "Social"
+      ],
+      "valor": 10.89,
+      "imagem": "https://images.unsplash.com/photo-1615483660505-5026932a392a?q=80&w=500"
+    },
+    {
+      "id": "47",
+      "nome": "Euro Truck Simulator 2",
+      "categorias": [
+        "Simulação",
+        "Dirigir",
+        "Relaxante"
+      ],
+      "valor": 51.99,
+      "imagem": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=500"
+    },
+    {
+      "id": "48",
+      "nome": "Deep Rock Galactic",
+      "categorias": [
+        "Tiro",
+        "Cooperativo",
+        "Exploração"
+      ],
+      "valor": 57.99,
+      "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500"
+    },
+    {
+      "id": "49",
+      "nome": "The Sims 4",
+      "categorias": [
+        "Simulação",
+        "Vida",
+        "Construção"
+      ],
+      "valor": 0,
+      "imagem": "https://images.unsplash.com/photo-1513364233939-b84920c474def?q=80&w=500"
+    },
+    {
+      "id": "50",
+      "nome": "Papers, Please",
+      "categorias": [
+        "Indie",
+        "Simulação",
+        "Estratégia"
+      ],
+      "valor": 20.69,
+      "imagem": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

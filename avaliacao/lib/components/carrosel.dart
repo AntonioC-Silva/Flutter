@@ -18,7 +18,7 @@ class Carrosel extends StatefulWidget {
 
 class _CarroselState extends State<Carrosel> {
   late final Future<List<Jogo>> _jogosFuture;
-  final PageController _pageController = PageController(viewportFraction: 0.78);
+  final PageController _pageController = PageController(viewportFraction: 0.60);
 
   @override
   void initState() {
@@ -65,22 +65,25 @@ class _CarroselState extends State<Carrosel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Aqui',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            _getTitulo(),
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                _getTitulo(),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Ver tudo',
+                  style: TextStyle(color: Colors.greenAccent),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 20),
           FutureBuilder<List<Jogo>>(
@@ -123,7 +126,7 @@ class _CarroselState extends State<Carrosel> {
               }
 
               return SizedBox(
-                height: 320,
+                height: 200,
                 child: PageView.builder(
                   controller: _pageController,
                   physics: const BouncingScrollPhysics(),

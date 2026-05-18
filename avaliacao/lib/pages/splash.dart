@@ -1,16 +1,15 @@
-import 'package:avaliacao/navigation/NavBar.dart';
-import 'package:avaliacao/pages/home.dart';
+import 'package:avaliacao/navigation/login.dart';
 import 'package:flutter/material.dart';
 
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class TelaSplash extends StatefulWidget {
+  const TelaSplash({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<TelaSplash> createState() => _TelaSplashState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _TelaSplashState extends State<TelaSplash> {
   //logica
   @override
   void initState(){//instruções na estapa inicial de carregamento dela
@@ -18,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed( // esper 2 seg e faz algo
       Duration(seconds: 2),
       (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> Home()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const PaginaLogin()));
       }
     );
 

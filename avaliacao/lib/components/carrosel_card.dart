@@ -9,7 +9,9 @@ class CarroselCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 16),
+      width: 100,
+      height: 200,
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         color: const Color(0xFF101820),
         borderRadius: BorderRadius.circular(20),
