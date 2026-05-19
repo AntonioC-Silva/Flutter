@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:avaliacao/navigation/NavBar.dart';
-import 'package:avaliacao/navigation/cadastro.dart';
+import 'package:avaliacao/pages/cadastro.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:avaliacao/models/usuario.dart';
-
 
 class PaginaLogin extends StatefulWidget {
   const PaginaLogin({super.key});
@@ -16,13 +15,13 @@ class PaginaLogin extends StatefulWidget {
 class _PaginaLoginState extends State<PaginaLogin> {
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
-  
-  // COLOQUE SEU IP AQUI (Ex: 192.168.0.10 ou 10.0.2.2 para emulador)
-  final String urlBase = 'http://10.91.40.0:3000'; 
-  bool _isLoading = false;
+
+  // use o ip do seu ambiente
+  final String urlBase = 'http://172.24.96.1:3000';
+  bool _carregando = false;
 
   Future<void> _login() async {
-    FocusScope.of(context).unfocus(); // Esconde o teclado
+    FocusScope.of(context).unfocus(); // esconde o teclado
     String email = _emailController.text.trim();
     String senha = _senhaController.text.trim();
 
@@ -37,25 +36,35 @@ class _PaginaLoginState extends State<PaginaLogin> {
     }
 
     setState(() {
-      _isLoading = true;
+      _carregando = true;
     });
 
     try {
-      // Usando Uri.parse().replace para garantir a codificação correta dos parâmetros
-      final url = Uri.parse('$urlBase/usuarios').replace(queryParameters: {
-        'email': email,
-        'senha': senha,
-      });
+      // busca usuarios e filtra localmente
+      final url = Uri.parse('$urlBase/usuarios');
+      debugPrint('Buscando base de usuários em: $url');
 
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
-        if (data.isNotEmpty) {
-          final usuarioLogado = Usuario.fromJson(data.first as Map<String, dynamic>);
-          
+
+        // verifica email e senha
+        final userMatches = data
+            .where((u) => u['email'] == email && u['senha'] == senha)
+            .toList();
+
+        if (userMatches.isNotEmpty) {
+          // usuario encontrado
+          final usuarioLogado = Usuario.fromJson(
+            userMatches.first as Map<String, dynamic>,
+          );
+
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Bem-vindo, ${usuarioLogado.nome}!'), backgroundColor: Colors.green),
+            SnackBar(
+              content: Text('Bem-vindo, ${usuarioLogado.nome}!'),
+              backgroundColor: Colors.green,
+            ),
           );
 
           Navigator.pushReplacement(
@@ -68,16 +77,26 @@ class _PaginaLoginState extends State<PaginaLogin> {
             ),
           );
           return;
+        } else {
+          // usuario nao encontrado
+          debugPrint(
+            'Nenhum usuário encontrado no array local com essas credenciais.',
+          );
+          throw 'E-mail ou senha incorretos';
         }
+      } else {
+        throw 'Erro no servidor: ${response.statusCode}';
       }
-      throw Exception('Credenciais inválidas');
     } catch (e) {
-      debugPrint('Erro no login: $e'); // Ajuda a identificar o erro real no console
+      debugPrint('Erro detalhado no login: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('E-mail ou senha incorretos'), backgroundColor: Colors.redAccent),
+        SnackBar(
+          content: Text(e.toString()),
+          backgroundColor: Colors.redAccent,
+        ),
       );
     } finally {
-      if (mounted) setState(() => _isLoading = false);
+      if (mounted) setState(() => _carregando = false);
     }
   }
 
@@ -100,7 +119,9 @@ class _PaginaLoginState extends State<PaginaLogin> {
                 labelStyle: const TextStyle(color: Colors.white70),
                 filled: true,
                 fillColor: const Color(0xFF1A2436),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
             ),
             const SizedBox(height: 15),
@@ -113,7 +134,9 @@ class _PaginaLoginState extends State<PaginaLogin> {
                 labelStyle: const TextStyle(color: Colors.white70),
                 filled: true,
                 fillColor: const Color(0xFF1A2436),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
             ),
             const SizedBox(height: 30),
@@ -121,27 +144,35 @@ class _PaginaLoginState extends State<PaginaLogin> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: _isLoading ? null : _login,
+                onPressed: _carregando ? null : _login,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.greenAccent,
                   foregroundColor: Colors.black,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
-                child: _isLoading
+                child: _carregando
                     ? const CircularProgressIndicator(color: Colors.black)
-                    : const Text('ENTRAR',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
+                    : const Text(
+                        'ENTRAR',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
               ),
+            ),
             TextButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const PaginaCadastro()),
+                  MaterialPageRoute(
+                    builder: (context) => const PaginaCadastro(),
+                  ),
                 );
               },
-              child: const Text('Criar conta', style: TextStyle(color: Colors.white70)),
+              child: const Text(
+                'Criar conta',
+                style: TextStyle(color: Colors.white70),
+              ),
             ),
           ],
         ),

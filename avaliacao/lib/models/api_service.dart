@@ -1,13 +1,17 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:avaliacao/models/jogo.dart';
 import 'package:avaliacao/models/usuario.dart';
 
 class ApiService {
-  static const String _baseUrl = 'http://localhost:3000'; // Altere para o IP da sua máquina se estiver testando em dispositivo físico
+  static const String _baseUrl =
+      'http://localhost:3000'; // Altere para o IP da sua máquina se estiver testando em dispositivo físico
 
   Future<Usuario?> login(String email, String senha) async {
     try {
-      final response = await http.get(Uri.parse('$_baseUrl/usuarios?email=$email&senha=$senha'));
+      final response = await http.get(
+        Uri.parse('$_baseUrl/usuarios?email=$email&senha=$senha'),
+      );
 
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
@@ -31,7 +35,9 @@ class ApiService {
       );
 
       if (response.statusCode == 201) {
-        return Usuario.fromJson(json.decode(response.body) as Map<String, dynamic>);
+        return Usuario.fromJson(
+          json.decode(response.body) as Map<String, dynamic>,
+        );
       } else {
         print('Erro ao cadastrar: ${response.statusCode} - ${response.body}');
         return null;
@@ -44,7 +50,9 @@ class ApiService {
 
   Future<bool> verificarEmailExistente(String email) async {
     try {
-      final response = await http.get(Uri.parse('$_baseUrl/usuarios?email=$email'));
+      final response = await http.get(
+        Uri.parse('$_baseUrl/usuarios?email=$email'),
+      );
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         return data.isNotEmpty;
@@ -53,6 +61,24 @@ class ApiService {
     } catch (e) {
       print('Erro ao verificar email: $e');
       return false;
+    }
+  }
+
+  Future<List<Jogo>> buscarJogos() async {
+    try {
+      final response = await http.get(Uri.parse('$_baseUrl/jogos'));
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        return data
+            .map((item) => Jogo.fromJson(item as Map<String, dynamic>))
+            .toList();
+      }
+
+      throw Exception('Erro ao carregar jogos: ${response.statusCode}');
+    } catch (e) {
+      print('Erro ao carregar jogos: $e');
+      rethrow;
     }
   }
 }

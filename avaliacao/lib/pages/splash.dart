@@ -1,6 +1,5 @@
-import 'package:avaliacao/navigation/login.dart';
+import 'package:avaliacao/pages/login.dart';
 import 'package:flutter/material.dart';
-
 
 class TelaSplash extends StatefulWidget {
   const TelaSplash({super.key});
@@ -10,18 +9,21 @@ class TelaSplash extends StatefulWidget {
 }
 
 class _TelaSplashState extends State<TelaSplash> {
-  //logica
+  // logica
   @override
-  void initState(){//instruções na estapa inicial de carregamento dela
+  void initState() {
+    // init splash
     super.initState();
-    Future.delayed( // esper 2 seg e faz algo
+    Future.delayed(
+      // espera 2 segundos e navega
       Duration(seconds: 2),
-      (){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const PaginaLogin()));
-      }
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const PaginaLogin()),
+        );
+      },
     );
-
-
   }
 
   @override
@@ -32,10 +34,14 @@ class _TelaSplashState extends State<TelaSplash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image:  AssetImage("assets/logo.png"), width: 150, height: 150,),
+            Image(
+              image: AssetImage("assets/logo.png"),
+              width: 150,
+              height: 150,
+            ),
           ],
-        )
-      )
+        ),
+      ),
     );
   }
 }

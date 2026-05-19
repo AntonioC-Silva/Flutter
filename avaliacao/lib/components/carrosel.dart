@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:avaliacao/models/jogo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 import 'carrosel_card.dart';
 
@@ -27,33 +27,50 @@ class _CarroselState extends State<Carrosel> {
   }
 
   Future<List<Jogo>> carregarJogos() async {
-    final jsonString = await rootBundle.loadString('API/db.json');
-    final data = jsonDecode(jsonString) as Map<String, dynamic>;
-    final jogos = data['jogos'] as List<dynamic>;
-    final listaJogos = jogos.map((item) => Jogo.fromJson(item as Map<String, dynamic>)).toList();
-    
-    if (widget.categorias != null && widget.categorias!.isNotEmpty) {
-      return listaJogos.where((jogo) {
-        return jogo.categorias.any((categoria) => widget.categorias!.contains(categoria));
-      }).toList();
+    try {
+      const String urlBase = 'http://localhost:3000';
+      final response = await http.get(Uri.parse('$urlBase/jogos'));
+
+      if (response.statusCode != 200) {
+        debugPrint(
+          'Erro na API ao carregar jogos: ${response.statusCode} - ${response.body}',
+        );
+        throw Exception('Falha ao carregar jogos: ${response.statusCode}');
+      }
+
+      final List<dynamic> data = jsonDecode(response.body);
+      final listaJogos = data
+          .map((item) => Jogo.fromJson(item as Map<String, dynamic>))
+          .toList();
+
+      if (widget.categorias != null && widget.categorias!.isNotEmpty) {
+        return listaJogos.where((jogo) {
+          return jogo.categorias.any(
+            (categoria) => widget.categorias!.contains(categoria),
+          );
+        }).toList();
+      }
+
+      return listaJogos;
+    } catch (e) {
+      debugPrint('Erro detalhado no Carrosel: $e');
+      rethrow;
     }
-    
-    return listaJogos;
   }
 
   String _getTitulo() {
     if (widget.titulo != null && widget.titulo!.isNotEmpty) {
       return widget.titulo!;
     }
-    
+
     if (widget.categorias == null || widget.categorias!.isEmpty) {
       return 'Jogos em destaque';
     }
-    
+
     if (widget.categorias!.length == 1) {
       return 'Jogos de ${widget.categorias!.first}';
     }
-    
+
     return 'Jogos de ${widget.categorias!.join(', ')}';
   }
 
@@ -93,9 +110,7 @@ class _CarroselState extends State<Carrosel> {
                 return const SizedBox(
                   height: 260,
                   child: Center(
-                    child: CircularProgressIndicator(
-                      color: Colors.greenAccent,
-                    ),
+                    child: CircularProgressIndicator(color: Colors.greenAccent),
                   ),
                 );
               }

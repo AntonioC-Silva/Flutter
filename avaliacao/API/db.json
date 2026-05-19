@@ -13,6 +13,20 @@
       "senha": "2617",
       "avatar": "https://i.pravatar.cc/150?u=avatar1",
       "id": "Rj5ZPpL-hgk"
+    },
+    {
+      "nome": "Renata",
+      "email": "Renata3@gmail.com",
+      "senha": "12345",
+      "avatar": "https://i.pravatar.cc/150?u=avatar1",
+      "id": "onWb08s5yC8"
+    },
+    {
+      "nome": "Antonio",
+      "email": "acrs2603@gmail.com",
+      "senha": "12",
+      "avatar": "https://i.pravatar.cc/150?u=avatar1",
+      "id": "ZTlLyAhr7Eo"
     }
   ],
   "jogos": [
@@ -25,7 +39,7 @@
         "Souls-like"
       ],
       "valor": 229.9,
-      "imagem": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS__eBA_kN-v83GvCsfu9uhywzGCj4HROBwNw&s"
     },
     {
       "id": "2",
@@ -36,7 +50,7 @@
         "Competitivo"
       ],
       "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=500"
+      "imagem": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/counter-strike-2/b/be/Cs2-banner.png"
     },
     {
       "id": "3",
@@ -46,7 +60,7 @@
         "Simulação"
       ],
       "valor": 359,
-      "imagem": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=500"
+      "imagem": "https://media.altchar.com/prod/images/gm_article_promo_image/1c15627807cb-screenshot-2023-07-06-124336.png"
     },
     {
       "id": "4",
@@ -57,7 +71,7 @@
         "Aventura"
       ],
       "valor": 199.99,
-      "imagem": "https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXlVWYR7171hxdRDxet9XoLPtm9uVewLja7g&s"
     },
     {
       "id": "5",
@@ -68,7 +82,7 @@
         "Mundo Aberto"
       ],
       "valor": 199.9,
-      "imagem": "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=500"
+      "imagem": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/a757b56d2078be8b09a04e2ad531f1fefafaa129/capsule_616x353.jpg?t=1769690377"
     },
     {
       "id": "6",
@@ -79,7 +93,7 @@
         "Relaxante"
       ],
       "valor": 24.99,
-      "imagem": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=500"
+      "imagem": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000001801/7aa9c6cf5e7d4cecf481f18b1d7a9d79e7aab85045b22203effb2dda409bc5b7"
     },
     {
       "id": "7",
@@ -90,7 +104,7 @@
         "Tiro"
       ],
       "valor": 299,
-      "imagem": "https://images.unsplash.com/photo-1533928298208-27ff66555d8d?q=80&w=500"
+      "imagem": "https://m.media-amazon.com/images/I/71xeX+uUF1L._AC_UF894,1000_QL80_.jpg"
     },
     {
       "id": "8",
@@ -101,7 +115,7 @@
         "Indie"
       ],
       "valor": 46.99,
-      "imagem": "https://images.unsplash.com/photo-1627850604058-52e40de1b847?q=80&w=500"
+      "imagem": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/f30cc19e25cce7e46cd7dfe89f3ee7852e634232/capsule_616x353.jpg?t=1776125684"
     },
     {
       "id": "9",
@@ -112,7 +126,7 @@
         "Mundo Aberto"
       ],
       "valor": 249,
-      "imagem": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=500"
+      "imagem": "https://cdn.forza.net/strapi-uploads/assets/FH_5_Evergreen_Key_Art_Horizontal_3840x2160_RGB_337636ab7f.jpg"
     },
     {
       "id": "10",
@@ -123,7 +137,7 @@
         "Aventura"
       ],
       "valor": 169,
-      "imagem": "https://images.unsplash.com/photo-1605142859862-978be7eba909?q=80&w=500"
+      "imagem": "https://cdn.nexus.gg/assets/vidya/7adc2ca2ce504dbf8dab89831e0e2bc2/images/game-banner.jpg"
     },
     {
       "id": "11",
@@ -134,7 +148,7 @@
         "Indie"
       ],
       "valor": 19.99,
-      "imagem": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500"
+      "imagem": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg?t=1769844435"
     },
     {
       "id": "12",
@@ -145,7 +159,7 @@
         "RPG"
       ],
       "valor": 199.9,
-      "imagem": "https://images.unsplash.com/photo-1580234811497-9bd7fd2f357d?q=80&w=500"
+      "imagem": "https://www.vgstores.ng/wp-content/uploads/2021/10/God-of-War-Ragnarok-Banner-800x450-1.webp"
     },
     {
       "id": "13",
@@ -156,7 +170,7 @@
         "Aventura"
       ],
       "valor": 82.42,
-      "imagem": "https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=500"
+      "imagem": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/grand-theft-auto-5/1/1d/Grand-theft-auto-v-banner.png"
     },
     {
       "id": "14",
@@ -562,6 +576,15 @@
       ],
       "valor": 20.69,
       "imagem": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500"
+    },
+    {
+      "nome": "Valorant",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhjYniqXU_9z5dMfSIK0eh-yn8A-qeE9Nmw&s",
+      "valor": 0,
+      "categorias": [
+        "FPS Ação"
+      ],
+      "id": "edI2ek7hSco"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

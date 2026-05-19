@@ -15,52 +15,55 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
   
-  // COLOQUE SEU IP AQUI
-  final String urlBase = 'http://localhost:3000'; 
+  // use o ip do seu ambiente
+  final String urlBase = 'http://172.24.96.1:3000'; 
 
-  String _selectedAvatar = 'https://i.pravatar.cc/150?u=avatar1'; // Avatar padrão
-  bool _isLoading = false;
+  String _avatarSelecionado = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgYs4pmb7Aeah1Rc8Vto13x31sgcMgSEWa6Q&s'; // avatar padrao
+  bool _carregando = false;
 
-  final List<String> _avatarOptions = [
-    'https://i.pravatar.cc/150?u=avatar1',
+  final List<String> _opcoesDeAvatar = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgYs4pmb7Aeah1Rc8Vto13x31sgcMgSEWa6Q&s',
     'https://i.pravatar.cc/150?u=avatar2',
     'https://i.pravatar.cc/150?u=avatar3',
   ];
 
   Future<void> _cadastrar() async {
-    if (_nomeController.text.isEmpty ||
-        _emailController.text.isEmpty ||
-        _senhaController.text.isEmpty) {
+    // remove espacos extras
+    final nome = _nomeController.text.trim();
+    final email = _emailController.text.trim();
+    final senha = _senhaController.text.trim();
+
+    if (nome.isEmpty || email.isEmpty || senha.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-            content: Text('Preencha todos os campos!'),
+            content: Text('Por favor, preencha todos os campos!'),
             backgroundColor: Colors.redAccent),
       );
       return;
     }
 
     setState(() {
-      _isLoading = true;
+      _carregando = true;
     });
 
     final novoUsuario = Usuario(
-      nome: _nomeController.text,
-      email: _emailController.text,
-      senha: _senhaController.text,
-      avatar: _selectedAvatar,
+      nome: nome,
+      email: email,
+      senha: senha,
+      avatar: _avatarSelecionado,
     );
 
     try {
-      // Verificar se email existe
-      final checkResponse = await http.get(Uri.parse('$urlBase/usuarios?email=${novoUsuario.email}'));
-      final List<dynamic> data = json.decode(checkResponse.body);
+      // verifica se email existe
+      final urlCheck = Uri.parse('$urlBase/usuarios?email=${novoUsuario.email}');
+      final checkResponse = await http.get(urlCheck);
       
-      if (data.isNotEmpty) {
+      if (checkResponse.statusCode == 200 && (json.decode(checkResponse.body) as List).isNotEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Este e-mail já está cadastrado.'), backgroundColor: Colors.redAccent),
         );
       } else {
-        // Realizar cadastro
+        // enviar cadastro
         final response = await http.post(
           Uri.parse('$urlBase/usuarios'),
           headers: {'Content-Type': 'application/json'},
@@ -81,7 +84,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
         const SnackBar(content: Text('Erro ao conectar ao servidor'), backgroundColor: Colors.redAccent),
       );
     } finally {
-      if (mounted) setState(() => _isLoading = false);
+      if (mounted) setState(() => _carregando = false);
     }
   }
 
@@ -118,16 +121,16 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: _avatarOptions.map((avatarUrl) {
+              children: _opcoesDeAvatar.map((avatarUrl) {
                 return GestureDetector(
                   onTap: () {
                     setState(() {
-                      _selectedAvatar = avatarUrl;
+                      _avatarSelecionado = avatarUrl;
                     });
                   },
                   child: CircleAvatar(
-                    radius: _selectedAvatar == avatarUrl ? 35 : 30,
-                    backgroundColor: _selectedAvatar == avatarUrl
+                    radius: _avatarSelecionado == avatarUrl ? 35 : 30,
+                    backgroundColor: _avatarSelecionado == avatarUrl
                         ? Colors.greenAccent
                         : Colors.transparent,
                     child: CircleAvatar(
@@ -180,19 +183,19 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: _isLoading ? null : _cadastrar,
+                onPressed: _carregando ? null : _cadastrar,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.greenAccent,
                   foregroundColor: Colors.black,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                 ),
-                child: _isLoading
+                child: _carregando
                     ? const CircularProgressIndicator(color: Colors.black)
                     : const Text('CADASTRAR',
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                ),
               ),
+            ),
           ],
         ),
       ),
