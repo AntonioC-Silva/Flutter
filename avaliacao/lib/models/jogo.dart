@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class Jogo {
   final int id;
   final String nome;
@@ -24,4 +26,36 @@ class Jogo {
       imagem: json['imagem'] as String,
     );
   }
+
+  factory Jogo.fromMap(Map<String, dynamic> map) {
+    final categoriasJson = map['categorias']?.toString() ?? '[]';
+    final dynamic decoded = json.decode(categoriasJson);
+    return Jogo(
+      id: map['id'] is int
+          ? map['id'] as int
+          : int.tryParse(map['id']?.toString() ?? '0') ?? 0,
+      nome: map['nome']?.toString() ?? '',
+      categorias: List<String>.from(decoded as List<dynamic>),
+      valor: map['valor'] is num
+          ? (map['valor'] as num).toDouble()
+          : double.tryParse(map['valor']?.toString() ?? '0') ?? 0,
+      imagem: map['imagem']?.toString() ?? '',
+    );
+  }
+
+  Map<String, dynamic> toMap() => {
+        'id': id,
+        'nome': nome,
+        'categorias': json.encode(categorias),
+        'valor': valor,
+        'imagem': imagem,
+      };
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'nome': nome,
+        'categorias': categorias,
+        'valor': valor,
+        'imagem': imagem,
+      };
 }

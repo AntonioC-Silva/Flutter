@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:avaliacao/navigation/NavBar.dart';
 import 'package:avaliacao/pages/cadastro.dart';
+import 'package:avaliacao/services/local_database.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:avaliacao/models/usuario.dart';
@@ -13,91 +14,74 @@ class PaginaLogin extends StatefulWidget {
 }
 
 class _PaginaLoginState extends State<PaginaLogin> {
-  final _emailController = TextEditingController();
-  final _senhaController = TextEditingController();
+  final emailController = TextEditingController();
+  final senhaController = TextEditingController();
 
-  // use o ip do seu ambiente
-  final String urlBase = 'http://172.24.96.1:3000';
-  bool _carregando = false;
+  bool carregando = false;
 
-  Future<void> _login() async {
-    FocusScope.of(context).unfocus(); // esconde o teclado
-    String email = _emailController.text.trim();
-    String senha = _senhaController.text.trim();
+  void fazerLogin() async {
+    String email = emailController.text;
+    String senha = senhaController.text;
 
     if (email.isEmpty || senha.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Por favor, preencha todos os campos'),
-          backgroundColor: Colors.redAccent,
-        ),
+        const SnackBar(content: Text('Preencha todos os campos')),
       );
       return;
     }
 
     setState(() {
-      _carregando = true;
+      carregando = true;
     });
 
     try {
-      // busca usuarios e filtra localmente
-      final url = Uri.parse('$urlBase/usuarios');
-      debugPrint('Buscando base de usuários em: $url');
+      final url = Uri.parse('http://172.24.96.1:3000/usuarios');
+      final resposta = await http.get(url);
 
-      final response = await http.get(url);
+      if (resposta.statusCode == 200) {
+        final dados = jsonDecode(resposta.body) as List;
+        bool encontrou = false;
+        Map<String, dynamic>? usuarioEncontrado;
 
-      if (response.statusCode == 200) {
-        final List<dynamic> data = json.decode(response.body);
+        for (var item in dados) {
+          if (item['email'] == email && item['senha'] == senha) {
+            encontrou = true;
+            usuarioEncontrado = item;
+            break;
+          }
+        }
 
-        // verifica email e senha
-        final userMatches = data
-            .where((u) => u['email'] == email && u['senha'] == senha)
-            .toList();
+        if (encontrou && usuarioEncontrado != null) {
+          final usuario = Usuario.fromJson(usuarioEncontrado);
+          await LocalDatabase.salvarUsuario(usuario);
 
-        if (userMatches.isNotEmpty) {
-          // usuario encontrado
-          final usuarioLogado = Usuario.fromJson(
-            userMatches.first as Map<String, dynamic>,
-          );
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Bem-vindo, ${usuarioLogado.nome}!'),
-              backgroundColor: Colors.green,
-            ),
-          );
-
+          if (!mounted) return;
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
               builder: (context) => BarraNavegacao(
-                nomeUsuario: usuarioLogado.nome,
-                avatarUrl: usuarioLogado.avatar,
+                nomeUsuario: usuario.nome,
+                avatarUrl: usuario.avatar,
               ),
             ),
           );
-          return;
         } else {
-          // usuario nao encontrado
-          debugPrint(
-            'Nenhum usuário encontrado no array local com essas credenciais.',
+          if (!mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Email ou senha incorretos')),
           );
-          throw 'E-mail ou senha incorretos';
         }
-      } else {
-        throw 'Erro no servidor: ${response.statusCode}';
       }
     } catch (e) {
-      debugPrint('Erro detalhado no login: $e');
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.toString()),
-          backgroundColor: Colors.redAccent,
-        ),
+        SnackBar(content: Text('Erro: $e')),
       );
-    } finally {
-      if (mounted) setState(() => _carregando = false);
     }
+
+    setState(() {
+      carregando = false;
+    });
   }
 
   @override
@@ -109,10 +93,10 @@ class _PaginaLoginState extends State<PaginaLogin> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage("assets/logo.png"), width: 100),
+            const Image(image: AssetImage('assets/logo.png'), width: 100),
             const SizedBox(height: 40),
             TextField(
-              controller: _emailController,
+              controller: emailController,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'E-mail',
@@ -126,7 +110,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
             ),
             const SizedBox(height: 15),
             TextField(
-              controller: _senhaController,
+              controller: senhaController,
               obscureText: true,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -144,7 +128,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
-                onPressed: _carregando ? null : _login,
+                onPressed: carregando ? null : fazerLogin,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.greenAccent,
                   foregroundColor: Colors.black,
@@ -152,12 +136,9 @@ class _PaginaLoginState extends State<PaginaLogin> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: _carregando
+                child: carregando
                     ? const CircularProgressIndicator(color: Colors.black)
-                    : const Text(
-                        'ENTRAR',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
+                    : const Text('ENTRAR', style: TextStyle(fontWeight: FontWeight.bold)),
               ),
             ),
             TextButton(

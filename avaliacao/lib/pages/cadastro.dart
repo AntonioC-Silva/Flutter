@@ -23,8 +23,8 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
 
   final List<String> _opcoesDeAvatar = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgYs4pmb7Aeah1Rc8Vto13x31sgcMgSEWa6Q&s',
-    'https://i.pravatar.cc/150?u=avatar2',
-    'https://i.pravatar.cc/150?u=avatar3',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOljvgrfvr4w3JzeeUhm9evpP-m5qAqx5eQ&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHAgciJ8R37zy5V6yOFkyWuM7mOr_J4LSBWg&s',
   ];
 
   Future<void> _cadastrar() async {

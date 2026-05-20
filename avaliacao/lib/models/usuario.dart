@@ -1,4 +1,4 @@
-class Usuario {
+﻿class Usuario {
   final String? id;
   final String nome;
   final String email;
@@ -23,6 +23,24 @@ class Usuario {
     );
   }
 
+  factory Usuario.fromMap(Map<String, dynamic> map) {
+    return Usuario(
+      id: map['id']?.toString() ?? '',
+      nome: map['nome']?.toString() ?? '',
+      email: map['email']?.toString() ?? '',
+      senha: map['senha']?.toString() ?? '',
+      avatar: map['avatar']?.toString() ?? '',
+    );
+  }
+
   Map<String, dynamic> toJson() =>
       {'nome': nome, 'email': email, 'senha': senha, 'avatar': avatar};
+
+  Map<String, dynamic> toMap() => {
+        'id': id ?? '',
+        'nome': nome,
+        'email': email,
+        'senha': senha,
+        'avatar': avatar,
+      };
 }

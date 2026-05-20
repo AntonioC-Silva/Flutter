@@ -1,6 +1,8 @@
 import 'package:avaliacao/components/carrosel.dart';
 import 'package:avaliacao/components/barra_pesquisa.dart';
 import 'package:avaliacao/components/bemvindo.dart';
+import 'package:avaliacao/pages/login.dart';
+import 'package:avaliacao/services/local_database.dart';
 import 'package:flutter/material.dart';
 
 class PaginaInicial extends StatefulWidget {
@@ -28,10 +30,28 @@ class _PaginaInicialState extends State<PaginaInicial> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: CircleAvatar(
-              // usa avatar do usuario logado
-              radius: 18,
-              backgroundImage: NetworkImage(widget.avatarUrl),
+            child: PopupMenuButton<String>(
+              icon: CircleAvatar(
+                radius: 18,
+                backgroundImage: NetworkImage(widget.avatarUrl),
+              ),
+              color: const Color(0xFF1A2436),
+              itemBuilder: (context) => [
+                const PopupMenuItem(
+                  value: 'logout',
+                  child: Text('Sair'),
+                ),
+              ],
+              onSelected: (value) {
+                if (value == 'logout') {
+                  LocalDatabase.limparUsuario();
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const PaginaLogin()),
+                    (route) => false,
+                  );
+                }
+              },
             ),
           ),
         ],

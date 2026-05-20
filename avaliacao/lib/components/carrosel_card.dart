@@ -1,3 +1,4 @@
+import 'package:avaliacao/components/estrela_favorito.dart';
 import 'package:avaliacao/models/jogo.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +10,7 @@ class CarroselCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 200,
+
       margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         color: const Color(0xFF101820),
@@ -29,30 +29,31 @@ class CarroselCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Image.network(
-                jogo.imagem,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Container(
-                  color: Colors.grey[800],
-                  alignment: Alignment.center,
-                  child: const Icon(
-                    Icons.broken_image,
-                    color: Colors.white54,
-                    size: 48,
+              child: Stack(
+                children: [
+                  Image.network(
+                    jogo.imagem,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        color: Colors.grey[800],
+                        child: const Icon(Icons.broken_image, color: Colors.white54),
+                      );
+                    },
                   ),
-                ),
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return Container(
-                    color: Colors.grey[900],
-                    child: const Center(
-                      child: CircularProgressIndicator(
-                        color: Colors.greenAccent,
+                  Positioned(
+                    top: 5,
+                    right: 5,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black45,
+                        borderRadius: BorderRadius.circular(20),
                       ),
+                      child: EstrelaFavorito(jogo: jogo),
                     ),
-                  );
-                },
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -67,7 +68,7 @@ class CarroselCard extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -76,7 +77,6 @@ class CarroselCard extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.greenAccent,
                       fontSize: 15,
-                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],

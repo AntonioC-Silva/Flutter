@@ -8,70 +8,79 @@ import 'carrosel_card.dart';
 
 class Carrosel extends StatefulWidget {
   final List<String>? categorias;
-  final String? titulo;
+  final String titulo;
 
-  const Carrosel({super.key, this.categorias, this.titulo});
+  const Carrosel({
+    super.key,
+    this.categorias,
+    required this.titulo,
+  });
 
   @override
   State<Carrosel> createState() => _CarroselState();
 }
 
 class _CarroselState extends State<Carrosel> {
-  late final Future<List<Jogo>> _jogosFuture;
-  final PageController _pageController = PageController(viewportFraction: 0.60);
+  List<Jogo> jogos = [];
+  bool carregando = true;
+  bool temErro = false;
+  String mensagemErro = '';
 
   @override
   void initState() {
     super.initState();
-    _jogosFuture = carregarJogos();
+    buscarJogos();
   }
 
-  Future<List<Jogo>> carregarJogos() async {
+  void buscarJogos() async {
     try {
-      const String urlBase = 'http://localhost:3000';
-      final response = await http.get(Uri.parse('$urlBase/jogos'));
+      final resposta = await http.get(Uri.parse('http://172.24.96.1:3000/jogos'));
 
-      if (response.statusCode != 200) {
-        debugPrint(
-          'Erro na API ao carregar jogos: ${response.statusCode} - ${response.body}',
-        );
-        throw Exception('Falha ao carregar jogos: ${response.statusCode}');
+      if (resposta.statusCode == 200) {
+        final dados = jsonDecode(resposta.body) as List;
+        List<Jogo> lista = [];
+
+        for (var item in dados) {
+          lista.add(Jogo.fromJson(item));
+        }
+
+        if (widget.categorias != null && widget.categorias!.isNotEmpty) {
+          List<Jogo> filtrada = [];
+          for (var jogo in lista) {
+            for (var categoria in widget.categorias!) {
+              if (jogo.categorias.contains(categoria)) {
+                filtrada.add(jogo);
+                break;
+              }
+            }
+          }
+          lista = filtrada;
+        }
+
+        if (mounted) {
+          setState(() {
+            jogos = lista;
+            carregando = false;
+          });
+        }
+      } else {
+        if (mounted) {
+          setState(() {
+            temErro = true;
+            mensagemErro = 'Erro ${resposta.statusCode}';
+            carregando = false;
+          });
+        }
       }
-
-      final List<dynamic> data = jsonDecode(response.body);
-      final listaJogos = data
-          .map((item) => Jogo.fromJson(item as Map<String, dynamic>))
-          .toList();
-
-      if (widget.categorias != null && widget.categorias!.isNotEmpty) {
-        return listaJogos.where((jogo) {
-          return jogo.categorias.any(
-            (categoria) => widget.categorias!.contains(categoria),
-          );
-        }).toList();
-      }
-
-      return listaJogos;
     } catch (e) {
-      debugPrint('Erro detalhado no Carrosel: $e');
-      rethrow;
+      if (mounted) {
+        setState(() {
+          temErro = true;
+          mensagemErro = 'Erro: $e';
+          carregando = false;
+        });
+      }
     }
-  }
-
-  String _getTitulo() {
-    if (widget.titulo != null && widget.titulo!.isNotEmpty) {
-      return widget.titulo!;
-    }
-
-    if (widget.categorias == null || widget.categorias!.isEmpty) {
-      return 'Jogos em destaque';
-    }
-
-    if (widget.categorias!.length == 1) {
-      return 'Jogos de ${widget.categorias!.first}';
-    }
-
-    return 'Jogos de ${widget.categorias!.join(', ')}';
   }
 
   @override
@@ -82,78 +91,52 @@ class _CarroselState extends State<Carrosel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                _getTitulo(),
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Ver tudo',
-                  style: TextStyle(color: Colors.greenAccent),
-                ),
-              ),
-            ],
+          Text(
+            widget.titulo,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 20),
-          FutureBuilder<List<Jogo>>(
-            future: _jogosFuture,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState != ConnectionState.done) {
-                return const SizedBox(
-                  height: 260,
-                  child: Center(
-                    child: CircularProgressIndicator(color: Colors.greenAccent),
-                  ),
-                );
-              }
-
-              if (snapshot.hasError) {
-                return SizedBox(
-                  height: 260,
-                  child: Center(
-                    child: Text(
-                      'Erro ao carregar jogos',
-                      style: TextStyle(color: Colors.red[300]),
-                    ),
-                  ),
-                );
-              }
-
-              final jogos = snapshot.data ?? [];
-              if (jogos.isEmpty) {
-                return const SizedBox(
-                  height: 260,
-                  child: Center(
-                    child: Text(
-                      'Nenhum jogo encontrado',
-                      style: TextStyle(color: Colors.white70),
-                    ),
-                  ),
-                );
-              }
-
-              return SizedBox(
-                height: 200,
-                child: PageView.builder(
-                  controller: _pageController,
-                  physics: const BouncingScrollPhysics(),
-                  pageSnapping: true,
-                  itemCount: jogos.length,
-                  itemBuilder: (context, index) {
-                    return CarroselCard(jogo: jogos[index]);
-                  },
+          if (carregando)
+            const SizedBox(
+              height: 260,
+              child: Center(
+                child: CircularProgressIndicator(color: Colors.greenAccent),
+              ),
+            ),
+          if (temErro)
+            SizedBox(
+              height: 260,
+              child: Center(
+                child: Text(
+                  mensagemErro,
+                  style: TextStyle(color: Colors.red[300]),
                 ),
-              );
-            },
-          ),
+              ),
+            ),
+          if (!carregando && !temErro && jogos.isEmpty)
+            const SizedBox(
+              height: 260,
+              child: Center(
+                child: Text(
+                  'Nenhum jogo encontrado',
+                  style: TextStyle(color: Colors.white70),
+                ),
+              ),
+            ),
+          if (!carregando && !temErro && jogos.isNotEmpty)
+            SizedBox(
+              height: 200,
+              child: PageView.builder(
+                itemCount: jogos.length,
+                itemBuilder: (context, index) {
+                  return CarroselCard(jogo: jogos[index]);
+                },
+              ),
+            ),
         ],
       ),
     );

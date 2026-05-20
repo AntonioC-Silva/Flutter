@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:avaliacao/pages/favoritos.dart';
 import 'package:avaliacao/pages/home.dart';
 import 'package:avaliacao/pages/gerenciamento_jogos.dart';
 
@@ -29,6 +30,7 @@ class _BarraNavegacaoState extends State<BarraNavegacao> {
         avatarUrl: widget.avatarUrl,
       ),
       TelaGerenciamentoJogos(), // tela de gerenciamento de jogos
+      const FavoritosPage(),
     ];
   }
 
@@ -55,9 +57,9 @@ class _BarraNavegacaoState extends State<BarraNavegacao> {
             label: "Gerenciar",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.delete_outline),
+            icon: Icon(Icons.star),
             backgroundColor: const Color.fromARGB(255, 31, 31, 32),
-            label: "POST",
+            label: "Favoritos",
           ),
         ],
         backgroundColor: const Color.fromARGB(255, 31, 31, 32),
