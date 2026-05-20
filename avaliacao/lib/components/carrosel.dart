@@ -131,6 +131,7 @@ class _CarroselState extends State<Carrosel> {
             SizedBox(
               height: 200,
               child: PageView.builder(
+                controller: PageController(viewportFraction: 0.75),
                 itemCount: jogos.length,
                 itemBuilder: (context, index) {
                   return CarroselCard(jogo: jogos[index]);

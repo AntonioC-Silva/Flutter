@@ -39,7 +39,7 @@ class _FavoritosPageState extends State<FavoritosPage> {
     return Scaffold(
       backgroundColor: const Color(0xFF040C20),
       appBar: AppBar(
-        title: const Text('Meus Favoritos'),
+        title: const Text('Meus Favoritos', style: TextStyle(color: Colors.white),),
         backgroundColor: const Color(0xFF040C20),
         elevation: 0,
       ),
