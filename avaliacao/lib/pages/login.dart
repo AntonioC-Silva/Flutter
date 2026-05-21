@@ -7,7 +7,7 @@ import 'dart:convert';
 import 'package:avaliacao/models/usuario.dart';
 
 class PaginaLogin extends StatefulWidget {
-  const PaginaLogin({super.key});
+  PaginaLogin({super.key});
 
   @override
   State<PaginaLogin> createState() => _PaginaLoginState();
@@ -25,7 +25,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
 
     if (email.isEmpty || senha.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Preencha todos os campos')),
+        SnackBar(content: Text('Preencha todos os campos')),
       );
       return;
     }
@@ -35,7 +35,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
     });
 
     try {
-      final url = Uri.parse('http://172.24.96.1:3000/usuarios');
+      final url = Uri.parse('http://10.91.40.0:3000/usuarios');
       final resposta = await http.get(url);
 
       if (resposta.statusCode == 200) {
@@ -68,7 +68,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
         } else {
           if (!mounted) return;
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Email ou senha incorretos')),
+            SnackBar(content: Text('Email ou senha incorretos')),
           );
         }
       }
@@ -87,43 +87,43 @@ class _PaginaLoginState extends State<PaginaLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF040C20),
+      backgroundColor: Color(0xFF040C20),
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(25.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage('assets/logo.png'), width: 100),
-            const SizedBox(height: 40),
+            Image(image: AssetImage('assets/logo.png'), width: 100),
+            SizedBox(height: 40),
             TextField(
               controller: emailController,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'E-mail',
-                labelStyle: const TextStyle(color: Colors.white70),
+                labelStyle: TextStyle(color: Colors.white70),
                 filled: true,
-                fillColor: const Color(0xFF1A2436),
+                fillColor: Color(0xFF1A2436),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             TextField(
               controller: senhaController,
               obscureText: true,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Senha',
-                labelStyle: const TextStyle(color: Colors.white70),
+                labelStyle: TextStyle(color: Colors.white70),
                 filled: true,
-                fillColor: const Color(0xFF1A2436),
+                fillColor: Color(0xFF1A2436),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
             SizedBox(
               width: double.infinity,
               height: 50,
@@ -137,8 +137,8 @@ class _PaginaLoginState extends State<PaginaLogin> {
                   ),
                 ),
                 child: carregando
-                    ? const CircularProgressIndicator(color: Colors.black)
-                    : const Text('ENTRAR', style: TextStyle(fontWeight: FontWeight.bold)),
+                    ? CircularProgressIndicator(color: Colors.black)
+                    : Text('ENTRAR', style: TextStyle(fontWeight: FontWeight.bold)),
               ),
             ),
             TextButton(
@@ -146,11 +146,11 @@ class _PaginaLoginState extends State<PaginaLogin> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PaginaCadastro(),
+                    builder: (context) => PaginaCadastro(),
                   ),
                 );
               },
-              child: const Text(
+              child: Text(
                 'Criar conta',
                 style: TextStyle(color: Colors.white70),
               ),

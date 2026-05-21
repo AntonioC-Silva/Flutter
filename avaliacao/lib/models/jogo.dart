@@ -1,6 +1,7 @@
 import 'dart:convert';
+import 'modelo_base.dart';
 
-class Jogo {
+class Jogo extends ModeloBase {
   final int id;
   final String nome;
   final List<String> categorias;
@@ -43,6 +44,7 @@ class Jogo {
     );
   }
 
+  @override
   Map<String, dynamic> toMap() => {
         'id': id,
         'nome': nome,
@@ -51,6 +53,7 @@ class Jogo {
         'imagem': imagem,
       };
 
+  @override
   Map<String, dynamic> toJson() => {
         'id': id,
         'nome': nome,

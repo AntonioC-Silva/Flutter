@@ -6,7 +6,7 @@ class GerenciamentoItemCard extends StatelessWidget {
   final VoidCallback aoEditar;
   final VoidCallback aoDeletar;
 
-  const GerenciamentoItemCard({
+  GerenciamentoItemCard({
     super.key,
     required this.jogo,
     required this.aoEditar,
@@ -23,20 +23,20 @@ class GerenciamentoItemCard extends StatelessWidget {
           width: 50,
           height: 50,
           fit: BoxFit.cover, 
-          errorBuilder: (_, __, ___) => const Icon(Icons.gamepad, color: Colors.white24),
+          errorBuilder: (_, __, ___) => Icon(Icons.gamepad, color: Colors.white24),
         ),
       ),
-      title: Text(jogo.nome, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-      subtitle: Text('R\$ ${jogo.valor.toStringAsFixed(2)}', style: const TextStyle(color: Colors.greenAccent)),
+      title: Text(jogo.nome, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+      subtitle: Text('R\$ ${jogo.valor.toStringAsFixed(2)}', style: TextStyle(color: Colors.greenAccent)),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            icon: const Icon(Icons.edit, color: Colors.blueAccent),
+            icon: Icon(Icons.edit, color: Colors.blueAccent),
             onPressed: aoEditar,
           ),
           IconButton(
-            icon: const Icon(Icons.delete, color: Colors.redAccent),
+            icon: Icon(Icons.delete, color: Colors.redAccent),
             onPressed: aoDeletar,
           ),
         ],

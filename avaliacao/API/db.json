@@ -5,27 +5,27 @@
       "nome": "Jogador Um",
       "email": "admin@teste.com",
       "senha": "123",
-      "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOljvgrfvr4w3JzeeUhm9evpP-m5qAqx5eQ&s"
     },
     {
       "nome": "Antonio",
       "email": "acrscloud@gmail.com",
       "senha": "2617",
-      "avatar": "https://i.pravatar.cc/150?u=avatar1",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOljvgrfvr4w3JzeeUhm9evpP-m5qAqx5eQ&s",
       "id": "Rj5ZPpL-hgk"
     },
     {
       "nome": "Renata",
       "email": "Renata3@gmail.com",
       "senha": "12345",
-      "avatar": "https://i.pravatar.cc/150?u=avatar1",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOljvgrfvr4w3JzeeUhm9evpP-m5qAqx5eQ&s",
       "id": "onWb08s5yC8"
     },
     {
       "nome": "Antonio",
       "email": "acrs2603@gmail.com",
       "senha": "12",
-      "avatar": "https://i.pravatar.cc/150?u=avatar1",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLOljvgrfvr4w3JzeeUhm9evpP-m5qAqx5eQ&s",
       "id": "ZTlLyAhr7Eo"
     },
     {
@@ -188,7 +188,7 @@
         "Cooperativo"
       ],
       "valor": 32.99,
-      "imagem": "https://images.unsplash.com/photo-1509191432712-d251c2339a36?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBYKLNZQa0HHLaBfIjURE9N5RkULKAVFVUyQ&s"
     },
     {
       "id": "15",
@@ -199,7 +199,7 @@
         "Mundo Aberto"
       ],
       "valor": 129.99,
-      "imagem": "https://images.unsplash.com/photo-1509191432712-d251c2339a36?q=80&w=500"
+      "imagem": "https://assets.isthereanydeal.com/018d937f-1212-7232-b23f-a046f6fd4a57/banner400.jpg?t=1768305010"
     },
     {
       "id": "16",
@@ -210,7 +210,7 @@
         "Estratégia"
       ],
       "valor": 59.99,
-      "imagem": "https://images.unsplash.com/photo-1624138784614-87fd1b6528f2?q=80&w=500"
+      "imagem": "https://images.steamusercontent.com/ugc/789730529899117879/12EEBFEF9FC806D87577B75645916EAB4D0497DE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
     },
     {
       "id": "17",
@@ -220,7 +220,7 @@
         "Simulação"
       ],
       "valor": 165,
-      "imagem": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=500"
+      "imagem": "https://xboxwire.thesourcemediaassets.com/sites/2/2023/09/CITIES_SKYLINESII_2023KEYART_1920x1080-d0dbecf50f0d9b02987f.jpg"
     },
     {
       "id": "18",
@@ -231,7 +231,7 @@
         "Arcade"
       ],
       "valor": 249,
-      "imagem": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoIAruBqRDW587wzJf9rPI5JY6oSBIa_7NEw&s"
     },
     {
       "id": "19",
@@ -242,7 +242,7 @@
         "Indie"
       ],
       "valor": 73.99,
-      "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500"
+      "imagem": "https://assets.isthereanydeal.com/018d937f-33f0-7200-80fc-87f769196c84/banner400.jpg?t=1761595303"
     },
     {
       "id": "20",
@@ -253,7 +253,7 @@
         "Tiro"
       ],
       "valor": 103.49,
-      "imagem": "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=500"
+      "imagem": "https://assets.isthereanydeal.com/018d937f-060f-705e-b364-8c5bba4d62f6/banner600.jpg?t=1776258327"
     },
     {
       "id": "21",
@@ -264,7 +264,7 @@
         "Roguelike"
       ],
       "valor": 47.49,
-      "imagem": "https://images.unsplash.com/photo-1635314156841-4f86a24130d5?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ32K_mZLWhIDkg4tMp220lBAO8tXFhYopo3Q&s"
     },
     {
       "id": "22",
@@ -275,7 +275,7 @@
         "Competitivo"
       ],
       "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500"
+      "imagem": "https://i.redd.it/a3lfur7iyvnf1.jpeg"
     },
     {
       "id": "23",
@@ -286,7 +286,7 @@
         "Aventura"
       ],
       "valor": 59.99,
-      "imagem": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPuW7t7D7Vifz1bdLPVrD_XT1Ley5Le-pLZw&s"
     },
     {
       "id": "24",
@@ -297,7 +297,7 @@
         "Ação"
       ],
       "valor": 299,
-      "imagem": "https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81MEP5nc-QwtCzI_tegKL3A1uM9xZORgmQg&s"
     },
     {
       "id": "25",
@@ -308,7 +308,7 @@
         "Aventura"
       ],
       "valor": 57.99,
-      "imagem": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LIAQh1S4qNFbyOsSjmCqUKOLN943VggC1Q&s"
     },
     {
       "id": "26",
@@ -319,7 +319,7 @@
         "Física"
       ],
       "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDXfpBRpdDuWSSsXTmEgmaaqtXJxbH-rbbQ&s"
     },
     {
       "id": "27",
@@ -330,7 +330,7 @@
         "Multijogador"
       ],
       "valor": 49.99,
-      "imagem": "https://images.unsplash.com/photo-1505633573214-362bd9d5384e?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJJQqGI2cLcaHUrPg4N6qI8lmg_dv8AaqHQ&s"
     },
     {
       "id": "28",
@@ -341,7 +341,7 @@
         "Simulação"
       ],
       "valor": 100,
-      "imagem": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXC8ddJbNcsiOhFtKiZtfxuKvAlKh04U_MIA&s"
     },
     {
       "id": "29",
@@ -352,7 +352,7 @@
         "Aventura"
       ],
       "valor": 199,
-      "imagem": "https://images.unsplash.com/photo-1521714161819-155349685541?q=80&w=500"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa9bSplytKOsbHjX5liOOSDWPGmpyAWvfL9g&s"
     },
     {
       "id": "30",
@@ -363,174 +363,10 @@
         "Indie"
       ],
       "valor": 27.89,
-      "imagem": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=500"
+      "imagem": "https://www.nintendo-insider.com/wp-content/uploads/2026/01/phasmophobia_banner-1160x653.jpg"
     },
     {
       "id": "31",
-      "nome": "Portal 2",
-      "categorias": [
-        "Puzzle",
-        "Plataforma",
-        "Sci-Fi"
-      ],
-      "valor": 32.99,
-      "imagem": "https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=500"
-    },
-    {
-      "id": "32",
-      "nome": "Monster Hunter: World",
-      "categorias": [
-        "Ação",
-        "RPG",
-        "Cooperativo"
-      ],
-      "valor": 99.9,
-      "imagem": "https://images.unsplash.com/photo-1559893088-c0787ebfc084?q=80&w=500"
-    },
-    {
-      "id": "33",
-      "nome": "Terraria",
-      "categorias": [
-        "Sobrevivência",
-        "Aventura",
-        "Crafting"
-      ],
-      "valor": 19.99,
-      "imagem": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500"
-    },
-    {
-      "id": "34",
-      "nome": "Apex Legends",
-      "categorias": [
-        "Tiro",
-        "Battle Royale",
-        "FPS"
-      ],
-      "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1560253023-3ee5d64ddfb6?q=80&w=500"
-    },
-    {
-      "id": "35",
-      "nome": "Skyrim",
-      "categorias": [
-        "RPG",
-        "Mundo Aberto",
-        "Fantasia"
-      ],
-      "valor": 149,
-      "imagem": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=500"
-    },
-    {
-      "id": "36",
-      "nome": "Cuphead",
-      "categorias": [
-        "Ação",
-        "Plataforma",
-        "Indie"
-      ],
-      "valor": 36.99,
-      "imagem": "https://images.unsplash.com/photo-1585644112145-3f1ed2137882?q=80&w=500"
-    },
-    {
-      "id": "37",
-      "nome": "Sea of Thieves",
-      "categorias": [
-        "Aventura",
-        "Multijogador",
-        "Piratas"
-      ],
-      "valor": 89.99,
-      "imagem": "https://images.unsplash.com/photo-1519114056088-b877fe073a5e?q=80&w=500"
-    },
-    {
-      "id": "38",
-      "nome": "Project Zomboid",
-      "categorias": [
-        "Sobrevivência",
-        "Zumbis",
-        "Simulação"
-      ],
-      "valor": 37.99,
-      "imagem": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500"
-    },
-    {
-      "id": "39",
-      "nome": "Dark Souls III",
-      "categorias": [
-        "Souls-like",
-        "RPG",
-        "Ação"
-      ],
-      "valor": 229,
-      "imagem": "https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=500"
-    },
-    {
-      "id": "40",
-      "nome": "Warframe",
-      "categorias": [
-        "Ação",
-        "Tiro",
-        "MMO"
-      ],
-      "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=500"
-    },
-    {
-      "id": "41",
-      "nome": "Valheim",
-      "categorias": [
-        "Sobrevivência",
-        "Mundo Aberto",
-        "Crafting"
-      ],
-      "valor": 37.99,
-      "imagem": "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=500"
-    },
-    {
-      "id": "42",
-      "nome": "RimWorld",
-      "categorias": [
-        "Estratégia",
-        "Simulação",
-        "Gestão"
-      ],
-      "valor": 65.99,
-      "imagem": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=500"
-    },
-    {
-      "id": "43",
-      "nome": "Devil May Cry 5",
-      "categorias": [
-        "Ação",
-        "Hack and Slash"
-      ],
-      "valor": 99.9,
-      "imagem": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=500"
-    },
-    {
-      "id": "44",
-      "nome": "Destiny 2",
-      "categorias": [
-        "Tiro",
-        "FPS",
-        "MMO"
-      ],
-      "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=500"
-    },
-    {
-      "id": "45",
-      "nome": "Celeste",
-      "categorias": [
-        "Plataforma",
-        "Difícil",
-        "Indie"
-      ],
-      "valor": 36.99,
-      "imagem": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=500"
-    },
-    {
-      "id": "46",
       "nome": "Among Us",
       "categorias": [
         "Multijogador",
@@ -538,10 +374,10 @@
         "Social"
       ],
       "valor": 10.89,
-      "imagem": "https://images.unsplash.com/photo-1615483660505-5026932a392a?q=80&w=500"
+      "imagem": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/758ab0b61205081da2466386940752c70e0e5ea43bd39e8b9b13eaa455c69b7e"
     },
     {
-      "id": "47",
+      "id": "32",
       "nome": "Euro Truck Simulator 2",
       "categorias": [
         "Simulação",
@@ -549,49 +385,7 @@
         "Relaxante"
       ],
       "valor": 51.99,
-      "imagem": "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=500"
-    },
-    {
-      "id": "48",
-      "nome": "Deep Rock Galactic",
-      "categorias": [
-        "Tiro",
-        "Cooperativo",
-        "Exploração"
-      ],
-      "valor": 57.99,
-      "imagem": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500"
-    },
-    {
-      "id": "49",
-      "nome": "The Sims 4",
-      "categorias": [
-        "Simulação",
-        "Vida",
-        "Construção"
-      ],
-      "valor": 0,
-      "imagem": "https://images.unsplash.com/photo-1513364233939-b84920c474def?q=80&w=500"
-    },
-    {
-      "id": "50",
-      "nome": "Papers, Please",
-      "categorias": [
-        "Indie",
-        "Simulação",
-        "Estratégia"
-      ],
-      "valor": 20.69,
-      "imagem": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500"
-    },
-    {
-      "nome": "Valorant",
-      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxhjYniqXU_9z5dMfSIK0eh-yn8A-qeE9Nmw&s",
-      "valor": 0,
-      "categorias": [
-        "FPS Ação"
-      ],
-      "id": "edI2ek7hSco"
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq8hZizsw_waJDtJ_WjrpeclqFKY0Raw-1HQ&s"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -4,7 +4,7 @@ import 'package:avaliacao/services/local_database.dart';
 import 'package:flutter/material.dart';
 
 class TelaSplash extends StatefulWidget {
-  const TelaSplash({super.key});
+  TelaSplash({super.key});
 
   @override
   State<TelaSplash> createState() => _TelaSplashState();
@@ -18,7 +18,7 @@ class _TelaSplashState extends State<TelaSplash> {
   }
 
   void verificarLogin() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 2));
 
     final usuario = await LocalDatabase.obterUsuario();
 
@@ -37,7 +37,7 @@ class _TelaSplashState extends State<TelaSplash> {
     } else {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const PaginaLogin()),
+        MaterialPageRoute(builder: (context) => PaginaLogin()),
       );
     }
   }
@@ -45,10 +45,10 @@ class _TelaSplashState extends State<TelaSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF040C20),
+      backgroundColor: Color(0xFF040C20),
       body: Center(
         child: Image(
-          image: const AssetImage('assets/logo.png'),
+          image: AssetImage('assets/logo.png'),
           width: 150,
           height: 150,
         ),

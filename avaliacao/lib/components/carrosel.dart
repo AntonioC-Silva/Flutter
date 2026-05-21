@@ -10,7 +10,7 @@ class Carrosel extends StatefulWidget {
   final List<String>? categorias;
   final String titulo;
 
-  const Carrosel({
+  Carrosel({
     super.key,
     this.categorias,
     required this.titulo,
@@ -34,7 +34,7 @@ class _CarroselState extends State<Carrosel> {
 
   void buscarJogos() async {
     try {
-      final resposta = await http.get(Uri.parse('http://172.24.96.1:3000/jogos'));
+      final resposta = await http.get(Uri.parse('http://10.91.40.0:3000/jogos'));
 
       if (resposta.statusCode == 200) {
         final dados = jsonDecode(resposta.body) as List;
@@ -86,22 +86,22 @@ class _CarroselState extends State<Carrosel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
-      color: const Color(0xFF040C20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+      color: Color(0xFF040C20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             widget.titulo,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           if (carregando)
-            const SizedBox(
+            SizedBox(
               height: 260,
               child: Center(
                 child: CircularProgressIndicator(color: Colors.greenAccent),
@@ -118,7 +118,7 @@ class _CarroselState extends State<Carrosel> {
               ),
             ),
           if (!carregando && !temErro && jogos.isEmpty)
-            const SizedBox(
+            SizedBox(
               height: 260,
               child: Center(
                 child: Text(

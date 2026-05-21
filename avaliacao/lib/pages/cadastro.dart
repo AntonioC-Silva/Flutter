@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class PaginaCadastro extends StatefulWidget {
-  const PaginaCadastro({super.key});
+  PaginaCadastro({super.key});
 
   @override
   State<PaginaCadastro> createState() => _PaginaCadastroState();
@@ -16,7 +16,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
   final _senhaController = TextEditingController();
   
   // use o ip do seu ambiente
-  final String urlBase = 'http://172.24.96.1:3000'; 
+  final String urlBase = 'http://10.91.40.0:3000'; 
 
   String _avatarSelecionado = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgYs4pmb7Aeah1Rc8Vto13x31sgcMgSEWa6Q&s'; // avatar padrao
   bool _carregando = false;
@@ -35,7 +35,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
 
     if (nome.isEmpty || email.isEmpty || senha.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
+        SnackBar(
             content: Text('Por favor, preencha todos os campos!'),
             backgroundColor: Colors.redAccent),
       );
@@ -60,7 +60,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
       
       if (checkResponse.statusCode == 200 && (json.decode(checkResponse.body) as List).isNotEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Este e-mail já está cadastrado.'), backgroundColor: Colors.redAccent),
+          SnackBar(content: Text('Este e-mail já está cadastrado.'), backgroundColor: Colors.redAccent),
         );
       } else {
         // enviar cadastro
@@ -72,7 +72,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
 
         if (response.statusCode == 201) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Cadastro realizado com sucesso!'), backgroundColor: Colors.green),
+            SnackBar(content: Text('Cadastro realizado com sucesso!'), backgroundColor: Colors.green),
           );
           Navigator.pop(context);
         } else {
@@ -81,7 +81,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Erro ao conectar ao servidor'), backgroundColor: Colors.redAccent),
+        SnackBar(content: Text('Erro ao conectar ao servidor'), backgroundColor: Colors.redAccent),
       );
     } finally {
       if (mounted) setState(() => _carregando = false);
@@ -91,34 +91,34 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF040C20),
+      backgroundColor: Color(0xFF040C20),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(25.0),
         child: Column(
           children: [
-            const Text(
+            Text(
               'Criar Conta',
               style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10),
+            Text(
               'Junte-se à maior comunidade gamer',
               style: TextStyle(color: Colors.white70, fontSize: 16),
             ),
-            const SizedBox(height: 30),
-            const Text(
+            SizedBox(height: 30),
+            Text(
               'Escolha seu Avatar:',
               style: TextStyle(color: Colors.white, fontSize: 18),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: _opcoesDeAvatar.map((avatarUrl) {
@@ -141,44 +141,44 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
                 );
               }).toList(),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
             TextField(
               controller: _nomeController,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Nome',
-                labelStyle: const TextStyle(color: Colors.white70),
+                labelStyle: TextStyle(color: Colors.white70),
                 filled: true,
-                fillColor: const Color(0xFF1A2436),
+                fillColor: Color(0xFF1A2436),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               ),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             TextField(
               controller: _emailController,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'E-mail',
-                labelStyle: const TextStyle(color: Colors.white70),
+                labelStyle: TextStyle(color: Colors.white70),
                 filled: true,
-                fillColor: const Color(0xFF1A2436),
+                fillColor: Color(0xFF1A2436),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               ),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             TextField(
               controller: _senhaController,
               obscureText: true,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Senha',
-                labelStyle: const TextStyle(color: Colors.white70),
+                labelStyle: TextStyle(color: Colors.white70),
                 filled: true,
-                fillColor: const Color(0xFF1A2436),
+                fillColor: Color(0xFF1A2436),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               ),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
             SizedBox(
               width: double.infinity,
               height: 50,
@@ -191,8 +191,8 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
                       borderRadius: BorderRadius.circular(12)),
                 ),
                 child: _carregando
-                    ? const CircularProgressIndicator(color: Colors.black)
-                    : const Text('CADASTRAR',
+                    ? CircularProgressIndicator(color: Colors.black)
+                    : Text('CADASTRAR',
                         style: TextStyle(fontWeight: FontWeight.bold)),
               ),
             ),

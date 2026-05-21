@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class EstrelaFavorito extends StatefulWidget {
   final Jogo jogo;
-  const EstrelaFavorito({super.key, required this.jogo});
+  EstrelaFavorito({super.key, required this.jogo});
 
   @override
   State<EstrelaFavorito> createState() => _EstrelaFavoritoState();

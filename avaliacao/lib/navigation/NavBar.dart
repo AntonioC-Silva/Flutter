@@ -6,7 +6,7 @@ import 'package:avaliacao/pages/gerenciamento_jogos.dart';
 class BarraNavegacao extends StatefulWidget {
   final String nomeUsuario;
   final String avatarUrl;
-  const BarraNavegacao({
+  BarraNavegacao({
     super.key,
     this.nomeUsuario = 'Jogador',
     this.avatarUrl = 'https://i.pravatar.cc/150?u=a042581f4e29026704d',
@@ -30,7 +30,7 @@ class _BarraNavegacaoState extends State<BarraNavegacao> {
         avatarUrl: widget.avatarUrl,
       ),
       TelaGerenciamentoJogos(), // tela de gerenciamento de jogos
-      const FavoritosPage(),
+      FavoritosPage(),
     ];
   }
 
@@ -48,22 +48,22 @@ class _BarraNavegacaoState extends State<BarraNavegacao> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            backgroundColor: const Color.fromARGB(255, 31, 31, 32),
+            backgroundColor: Color.fromARGB(255, 31, 31, 32),
             label: "Início",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            backgroundColor: const Color.fromARGB(255, 31, 31, 32),
+            backgroundColor: Color.fromARGB(255, 31, 31, 32),
             label: "Gerenciar",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star),
-            backgroundColor: const Color.fromARGB(255, 31, 31, 32),
+            backgroundColor: Color.fromARGB(255, 31, 31, 32),
             label: "Favoritos",
           ),
         ],
-        backgroundColor: const Color.fromARGB(255, 31, 31, 32),
-        selectedItemColor: const Color.fromARGB(255, 1, 141, 255),
+        backgroundColor: Color.fromARGB(255, 31, 31, 32),
+        selectedItemColor: Color.fromARGB(255, 1, 141, 255),
         unselectedItemColor: Colors.grey[400],
         unselectedIconTheme: IconThemeData(color: Colors.grey[400]),
 

@@ -5,7 +5,7 @@ import 'package:avaliacao/models/jogo.dart';
 import 'package:avaliacao/components/gerenciamento_item_card.dart';
 
 class TelaGerenciamentoJogos extends StatefulWidget {
-  const TelaGerenciamentoJogos({super.key});
+  TelaGerenciamentoJogos({super.key});
 
   @override
   State<TelaGerenciamentoJogos> createState() => _TelaGerenciamentoJogosState();
@@ -13,7 +13,7 @@ class TelaGerenciamentoJogos extends StatefulWidget {
 
 class _TelaGerenciamentoJogosState extends State<TelaGerenciamentoJogos> {
   // usa o ip do mesmo ambiente
-  final String urlBase = 'http://172.24.96.1:3000'; 
+  final String urlBase = 'http://10.91.40.0:3000'; 
   
   final _nomeController = TextEditingController();
   final _imagemController = TextEditingController();
@@ -133,20 +133,20 @@ class _TelaGerenciamentoJogosState extends State<TelaGerenciamentoJogos> {
 
   Widget _construirCampoTexto(TextEditingController controller, String label, {bool isNumber = false}) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
+      padding: EdgeInsets.only(bottom: 12.0),
       child: TextField(
         controller: controller,
         keyboardType: isNumber ? TextInputType.number : TextInputType.text,
-        style: const TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: const TextStyle(color: Colors.white70),
+          labelStyle: TextStyle(color: Colors.white70),
           filled: true,
-          fillColor: const Color(0xFF1A2436),
+          fillColor: Color(0xFF1A2436),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Colors.white10),
+            borderSide: BorderSide(color: Colors.white10),
           ),
         ),
       ),
@@ -156,22 +156,22 @@ class _TelaGerenciamentoJogosState extends State<TelaGerenciamentoJogos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF040C20),
+      backgroundColor: Color(0xFF040C20),
       appBar: AppBar(
-        title: const Text('Gerenciar Jogos', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: Text('Gerenciar Jogos', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Column(
         children: [
           // Formulário de Cadastro/Edição
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Container(
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF0F172A),
+                color: Color(0xFF0F172A),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -181,11 +181,11 @@ class _TelaGerenciamentoJogosState extends State<TelaGerenciamentoJogos> {
                   Row(
                     children: [
                       Expanded(child: _construirCampoTexto(_valorController, 'Valor', isNumber: true)),
-                      const SizedBox(width: 10),
+                      SizedBox(width: 10),
                       Expanded(child: _construirCampoTexto(_categoriasController, 'Categorias (Ação, RPG...)')),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -197,24 +197,24 @@ class _TelaGerenciamentoJogosState extends State<TelaGerenciamentoJogos> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       ),
                       child: Text(_idEmEdicao == null ? "ADICIONAR NOVO JOGO" : "SALVAR ALTERAÇÕES", 
-                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                   ),
                   if (_idEmEdicao != null)
-                    TextButton(onPressed: _limparCampos, child: const Text('Cancelar Edição', style: TextStyle(color: Colors.white70))),
+                    TextButton(onPressed: _limparCampos, child: Text('Cancelar Edição', style: TextStyle(color: Colors.white70))),
                 ],
               ),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Align(alignment: Alignment.centerLeft, child: Text("Jogos Cadastrados", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold))),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10),
           // Lista de Jogos
           Expanded(
             child: _carregando 
-              ? const Center(child: CircularProgressIndicator(color: Colors.greenAccent))
+              ? Center(child: CircularProgressIndicator(color: Colors.greenAccent))
               : ListView.builder(
                   itemCount: _jogos.length,
                   itemBuilder: (context, index) {

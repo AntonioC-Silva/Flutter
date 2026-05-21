@@ -1,4 +1,6 @@
-﻿class Usuario {
+import 'modelo_base.dart';
+
+class Usuario extends ModeloBase {
   final String? id;
   final String nome;
   final String email;
@@ -33,9 +35,11 @@
     );
   }
 
+  @override
   Map<String, dynamic> toJson() =>
       {'nome': nome, 'email': email, 'senha': senha, 'avatar': avatar};
 
+  @override
   Map<String, dynamic> toMap() => {
         'id': id ?? '',
         'nome': nome,
