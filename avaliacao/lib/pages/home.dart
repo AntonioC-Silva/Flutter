@@ -39,7 +39,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
               itemBuilder: (context) => [
                 PopupMenuItem(
                   value: 'logout',
-                  child: Text('Sair', style: TextStyle(color: Colors.white),),
+                  child: Text('Sair', style: TextStyle(color: Colors.white,),),
                 ),
               ],
               onSelected: (value) {
