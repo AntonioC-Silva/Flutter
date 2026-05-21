@@ -29,7 +29,7 @@ class _BarraNavegacaoState extends State<BarraNavegacao> {
         nomeUsuario: widget.nomeUsuario,
         avatarUrl: widget.avatarUrl,
       ),
-      TelaGerenciamentoJogos(), // tela de gerenciamento de jogos
+      TelaGerenciamentoJogos(),
       FavoritosPage(),
     ];
   }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'modelo_base.dart';
 
+//definindo a classe jogo como modelo de dados de um jogo(json)
 class Jogo extends ModeloBase {
   final int id;
   final String nome;
@@ -8,6 +9,7 @@ class Jogo extends ModeloBase {
   final double valor;
   final String imagem;
 
+  //criando instancia principal com todos os campos obrigatorios
   Jogo({
     required this.id,
     required this.nome,
@@ -16,6 +18,7 @@ class Jogo extends ModeloBase {
     required this.imagem,
   });
 
+  //função que cria jogo a partir do json e trata id 
   factory Jogo.fromJson(Map<String, dynamic> json) {
     final idValue = json['id'];
 
@@ -27,6 +30,7 @@ class Jogo extends ModeloBase {
       imagem: json['imagem'] as String,
     );
   }
+
 
   factory Jogo.fromMap(Map<String, dynamic> map) {
     final categoriasJson = map['categorias']?.toString() ?? '[]';
@@ -44,6 +48,7 @@ class Jogo extends ModeloBase {
     );
   }
 
+  //converte instancia pra Map para armazenamento local
   @override
   Map<String, dynamic> toMap() => {
         'id': id,
@@ -53,6 +58,7 @@ class Jogo extends ModeloBase {
         'imagem': imagem,
       };
 
+  //função que converte instancia pra json 
   @override
   Map<String, dynamic> toJson() => {
         'id': id,
