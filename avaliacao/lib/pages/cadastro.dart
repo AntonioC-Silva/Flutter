@@ -16,7 +16,7 @@ class _PaginaCadastroState extends State<PaginaCadastro> {
   final _senhaController = TextEditingController();
   
   // use o ip do seu ambiente
-  final String urlBase = 'http://10.91.40.0:3000'; 
+  final String urlBase = 'https://steam-hnwe.onrender.com'; 
 
   String _avatarSelecionado = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgYs4pmb7Aeah1Rc8Vto13x31sgcMgSEWa6Q&s'; // avatar padrao
   bool _carregando = false;

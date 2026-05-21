@@ -34,7 +34,7 @@ class _CarroselState extends State<Carrosel> {
 
   void buscarJogos() async {
     try {
-      final resposta = await http.get(Uri.parse('http://10.91.40.0:3000/jogos'));
+      final resposta = await http.get(Uri.parse('https://steam-hnwe.onrender.com/jogos'));
 
       if (resposta.statusCode == 200) {
         final dados = jsonDecode(resposta.body) as List;

@@ -35,7 +35,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
     });
 
     try {
-      final url = Uri.parse('http://10.91.40.0:3000/usuarios');
+      final url = Uri.parse('https://steam-hnwe.onrender.com/usuarios');
       final resposta = await http.get(url);
 
       if (resposta.statusCode == 200) {

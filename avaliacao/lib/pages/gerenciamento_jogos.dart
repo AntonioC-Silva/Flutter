@@ -13,7 +13,7 @@ class TelaGerenciamentoJogos extends StatefulWidget {
 
 class _TelaGerenciamentoJogosState extends State<TelaGerenciamentoJogos> {
   // usa o ip do mesmo ambiente
-  final String urlBase = 'http://10.91.40.0:3000'; 
+  final String urlBase = 'https://steam-hnwe.onrender.com'; 
   
   final _nomeController = TextEditingController();
   final _imagemController = TextEditingController();
